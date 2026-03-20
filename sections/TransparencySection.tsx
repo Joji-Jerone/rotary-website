@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -29,9 +30,35 @@ export default function TransparencySection() {
           </p>
         </div>
 
+        {/* ── Top: full-width community image ── */}
+        <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg mb-10">
+          <Image
+            src="https://picsum.photos/seed/transparency-team/1200/500"
+            alt="Rotary Club members at a community event"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-900/70 to-transparent" />
+          <div className="absolute inset-0 flex items-center px-10">
+            <div className="max-w-sm">
+              <p className="text-white/80 text-sm font-semibold uppercase tracking-widest mb-2">
+                Our Promise
+              </p>
+              <h3
+                className="text-white text-2xl md:text-3xl font-bold leading-snug"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                Every Rupee Counts,<br />Every Action Matters
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Cards row ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-          {/* ── Certifications Card ── */}
+          {/* Certifications Card */}
           <Card className="border shadow-sm hover:shadow-md transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-ngo-black">
@@ -57,7 +84,7 @@ export default function TransparencySection() {
             </CardContent>
           </Card>
 
-          {/* ── Financial Breakdown Card ── */}
+          {/* Financial Breakdown Card */}
           <Card className="border shadow-sm hover:shadow-md transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-ngo-black">

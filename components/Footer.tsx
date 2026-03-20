@@ -1,12 +1,6 @@
 import Link from "next/link";
-import {
-  Heart,
-  Twitter,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Youtube,
-} from "lucide-react";
+import { Twitter, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import RotaryLogo from "@/components/RotaryLogo";
 import { NAV_LINKS, SOCIAL_LINKS, LEGAL_LINKS } from "@/lib/constants";
 
 const SOCIAL_ICONS = {
@@ -27,9 +21,7 @@ export default function Footer() {
           {/* ── Brand Column ── */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-brand rounded-full flex items-center justify-center">
-                <Heart className="h-5 w-5 text-white" fill="white" />
-              </div>
+              <RotaryLogo size={36} />
               <span
                 className="text-xl font-bold"
                 style={{ fontFamily: "var(--font-heading)" }}

@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, Heart } from "lucide-react";
+import { Menu } from "lucide-react";
+import RotaryLogo from "@/components/RotaryLogo";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
@@ -33,7 +34,7 @@ export default function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-md py-3"
-          : "bg-transparent py-5",
+          : "bg-white/80 backdrop-blur-sm border-b border-gray-100 py-4",
       )}
     >
       <div className="container-custom mx-auto flex items-center justify-between">
@@ -43,14 +44,11 @@ export default function Navbar() {
           className="flex items-center gap-2 group"
           aria-label="Rotary Club Home"
         >
-          <div className="w-9 h-9 bg-brand rounded-full flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-            <Heart className="h-5 w-5 text-white" fill="white" />
+          <div className="group-hover:scale-105 transition-transform drop-shadow-md">
+            <RotaryLogo size={36} />
           </div>
           <span
-            className={cn(
-              "text-xl font-bold transition-colors duration-300",
-              isScrolled ? "text-ngo-black" : "text-white",
-            )}
+            className="text-xl font-bold text-ngo-black"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Rotary Club
@@ -63,10 +61,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors duration-200 hover:text-brand relative group",
-                isScrolled ? "text-gray-700" : "text-white/90",
-              )}
+              className="text-sm font-medium text-gray-700 hover:text-brand transition-colors duration-200 relative group"
             >
               {link.label}
               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-brand group-hover:w-full transition-all duration-300" />
@@ -86,10 +81,7 @@ export default function Navbar() {
         {/* ── Mobile Hamburger ── */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger
-            className={cn(
-              "md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-white/20 transition-colors",
-              isScrolled ? "text-ngo-black" : "text-white",
-            )}
+            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-ngo-black hover:bg-gray-100 transition-colors"
             aria-label="Open menu"
           >
             <Menu className="h-6 w-6" />
@@ -97,9 +89,7 @@ export default function Navbar() {
           <SheetContent side="right" className="w-72 p-0">
             <SheetHeader className="px-6 py-5 border-b">
               <SheetTitle className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-brand rounded-full flex items-center justify-center">
-                  <Heart className="h-4 w-4 text-white" fill="white" />
-                </div>
+                <RotaryLogo size={32} />
                 <span className="text-ngo-black font-bold">Rotary Club</span>
               </SheetTitle>
             </SheetHeader>

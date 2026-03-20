@@ -6,6 +6,7 @@ import AboutSection        from "@/sections/AboutSection";
 import ProjectsSection     from "@/sections/ProjectsSection";
 import ImpactSection       from "@/sections/ImpactSection";
 import TransparencySection from "@/sections/TransparencySection";
+import TeamSection         from "@/sections/TeamSection";
 import DonateSection       from "@/sections/DonateSection";
 import ContactSection      from "@/sections/ContactSection";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <ProjectsSection />
       <ImpactSection />
       <TransparencySection />
+      <TeamSection />
       <DonateSection />
       <ContactSection />
       <Footer />

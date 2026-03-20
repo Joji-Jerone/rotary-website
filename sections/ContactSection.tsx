@@ -1,0 +1,210 @@
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { MapPin, Mail, Phone, Send, CheckCircle } from "lucide-react";
+import { CONTACT_INFO } from "@/lib/constants";
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+const CONTACT_ITEMS = [
+  { Icon: MapPin, label: "Address",   key: "address" as const },
+  { Icon: Mail,   label: "Email",     key: "email"   as const },
+  { Icon: Phone,  label: "Phone",     key: "phone"   as const },
+] as const;
+
+export default function ContactSection() {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate API call — replace with real endpoint
+    await new Promise((resolve) => setTimeout(resolve, 1400));
+    setIsSubmitting(false);
+    setSubmitted(true);
+  };
+
+  return (
+    <section
+      id="contact"
+      className="section-padding bg-ngo-gray"
+      aria-label="Contact Us"
+    >
+      <div className="container-custom mx-auto">
+
+        {/* ── Section Header ── */}
+        <div className="text-center mb-12">
+          <p className="section-subtitle">Get In Touch</p>
+          <h2 className="section-title">Contact Us</h2>
+          <p className="text-gray-500 max-w-xl mx-auto text-base leading-relaxed">
+            Have questions, want to volunteer, or explore a partnership?
+            We&apos;d love to hear from you.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
+
+          {/* ── Contact Info Column ── */}
+          <div className="space-y-6 lg:pt-4">
+            {CONTACT_ITEMS.map(({ Icon, label, key }) => (
+              <div key={label} className="flex gap-4">
+                <div className="flex-shrink-0 w-11 h-11 rounded-full bg-brand-50 border border-brand-100 flex items-center justify-center">
+                  <Icon className="h-5 w-5 text-brand" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
+                    {label}
+                  </p>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {CONTACT_INFO[key]}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            {/* Availability note */}
+            <div className="mt-6 p-4 rounded-xl bg-brand-50 border border-brand-100">
+              <p className="text-sm text-brand-800 font-medium">
+                Response within 24 hours
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                Mon – Fri, 9am – 6pm CET
+              </p>
+            </div>
+          </div>
+
+          {/* ── Contact Form ── */}
+          <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+            {submitted ? (
+              /* ── Success State ── */
+              <div className="flex flex-col items-center justify-center h-full py-8 text-center">
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="h-8 w-8 text-green-500" />
+                </div>
+                <h3 className="text-xl font-bold text-ngo-black mb-2">
+                  Message Sent!
+                </h3>
+                <p className="text-gray-500 max-w-sm">
+                  Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                </p>
+                <Button
+                  variant="outline"
+                  className="mt-6 border-brand text-brand hover:bg-brand hover:text-white"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setFormData({ name: "", email: "", subject: "", message: "" });
+                  }}
+                >
+                  Send Another Message
+                </Button>
+              </div>
+            ) : (
+              /* ── Form ── */
+              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="space-y-1.5">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                      Your Name <span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Jane Doe"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="border-gray-200 focus-visible:ring-brand"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                      Email Address <span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="jane@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="border-gray-200 focus-visible:ring-brand"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+                    Subject
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    placeholder="How can we help you?"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="border-gray-200 focus-visible:ring-brand"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                    Message <span className="text-red-500">*</span>
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={5}
+                    placeholder="Tell us about your interest in our work, or how you'd like to get involved..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="border-gray-200 focus-visible:ring-brand resize-none"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-brand hover:bg-brand-600 text-white font-semibold py-5 transition-all duration-200"
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center gap-2">
+                      <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Sending...
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-2">
+                      Send Message <Send className="h-4 w-4" />
+                    </span>
+                  )}
+                </Button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

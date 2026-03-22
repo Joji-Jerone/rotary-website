@@ -59,18 +59,18 @@
   --color-brand-700: #026c87;
   --color-brand-800: #015265;
   --color-brand-900: #013944;
-  --color-ngo-black: #000000;
+  --color-ngo-black: #0f172a;
   --color-ngo-white: #ffffff;
-  --color-ngo-gray: #f8f9fa;
+  --color-ngo-gray: #f8fafc;
 
   /* ── Custom Font ── */
   --font-heading: var(--font-merriweather, Georgia, serif);
 
   /* ── Custom Animations ── */
-  --animate-fade-in: fadeIn 0.6s ease-in-out both;
-  --animate-fade-in-up: fadeInUp 0.7s ease-out both;
-  --animate-slide-in-left: slideInLeft 0.6s ease-out both;
-  --animate-float: float 3s ease-in-out infinite;
+  --animate-fade-in:       fadeIn      0.6s ease-in-out both;
+  --animate-fade-in-up:    fadeInUp    0.7s ease-out    both;
+  --animate-slide-in-left: slideInLeft 0.6s ease-out    both;
+  --animate-float:         float       3s  ease-in-out  infinite;
 
   @keyframes fadeIn {
     from { opacity: 0; }
@@ -90,6 +90,16 @@
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50%       { transform: translateY(-10px); }
+  }
+
+  @keyframes shimmer {
+    from { background-position: -200% center; }
+    to   { background-position:  200% center; }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
   }
 }
 
@@ -159,5 +169,15 @@
   }
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ── Reusable card hover ── */
+  .card-hover {
+    @apply rounded-2xl border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out;
+  }
+
+  /* ── Reusable button depth ── */
+  .btn-depth {
+    @apply shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200;
   }
 }

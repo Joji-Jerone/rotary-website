@@ -1,12 +1,18 @@
 import Image from "next/image";
 import LinkButton from "@/components/LinkButton";
 import RotaryLogo from "@/components/RotaryLogo";
-import { ArrowRight, HeartHandshake, Users, CheckCircle, Globe } from "lucide-react";
+import {
+  ArrowRight,
+  HeartHandshake,
+  Users,
+  CheckCircle,
+  Globe,
+} from "lucide-react";
 
 const STATS = [
-  { value: "10K+", label: "Lives Impacted",    Icon: Users },
-  { value: "50+",  label: "Projects Done",     Icon: CheckCircle },
-  { value: "20+",  label: "Countries Reached", Icon: Globe },
+  { value: "10K+", label: "Lives Impacted", Icon: Users },
+  { value: "50+", label: "Projects Done", Icon: CheckCircle },
+  { value: "20+", label: "Countries Reached", Icon: Globe },
 ];
 
 export default function HeroSection() {
@@ -22,13 +28,15 @@ export default function HeroSection() {
 
       <div className="container-custom relative z-10 pt-28 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
           {/* ── Left: Text Content ── */}
           <div>
             {/* Rotary badge */}
             <div
               className="inline-flex items-center gap-2.5 bg-brand-50 border border-brand-100 text-brand text-sm font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
-              style={{ animation: "var(--animate-fade-in)", animationDelay: "0ms" }}
+              style={{
+                animation: "var(--animate-fade-in)",
+                animationDelay: "0ms",
+              }}
             >
               <RotaryLogo size={20} />
               Service Above Self
@@ -43,9 +51,9 @@ export default function HeroSection() {
                 animationDelay: "150ms",
               }}
             >
-              Together We Build
+              We are People of
               <br />
-              <span className="text-brand">A Better World</span>
+              <span className="text-brand">Action</span>
             </h1>
 
             {/* Subtext */}
@@ -56,9 +64,10 @@ export default function HeroSection() {
                 animationDelay: "300ms",
               }}
             >
-              Join thousands of volunteers and donors helping us deliver
-              education, healthcare, and clean water to communities that
-              need it most.
+              35 members from Sirumugai Rotary club engaged with our global
+              network of more than 1.2 million neighbours, friends, and leaders,
+              who volunteer their skills and resources to solve issues and
+              address community needs.
             </p>
 
             {/* CTA Buttons */}
@@ -101,7 +110,9 @@ export default function HeroSection() {
                     <Icon className="h-4 w-4 text-brand" />
                   </div>
                   <p className="text-xl font-bold text-ngo-black">{value}</p>
-                  <p className="text-xs text-gray-500 leading-tight mt-0.5">{label}</p>
+                  <p className="text-xs text-gray-500 leading-tight mt-0.5">
+                    {label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -132,15 +143,23 @@ export default function HeroSection() {
                 <HeartHandshake className="h-5 w-5 text-brand" />
               </div>
               <div>
-                <p className="text-sm font-bold text-ngo-black">Rotary International</p>
-                <p className="text-xs text-gray-400">Est. 1905 &bull; Service Above Self</p>
+                <p className="text-sm font-bold text-ngo-black">
+                  Rotary International
+                </p>
+                <p className="text-xs text-gray-400">
+                  Est. 1905 &bull; Service Above Self
+                </p>
               </div>
             </div>
 
             {/* Floating years badge */}
             <div className="absolute -top-4 -right-4 bg-brand text-white rounded-2xl px-4 py-3 shadow-lg shadow-brand/30 text-center">
               <p className="text-3xl font-bold leading-none">20+</p>
-              <p className="text-xs opacity-90 mt-1">Years of<br />Service</p>
+              <p className="text-xs opacity-90 mt-1">
+                Years of
+                <br />
+                Service
+              </p>
             </div>
           </div>
         </div>

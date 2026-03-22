@@ -1,55 +1,54 @@
 "use client";
 
-import { Users, CheckCircle, Globe, DollarSign, Quote } from "lucide-react";
+import { Users, CheckCircle, Globe, Heart, Quote } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import SectionHeading from "@/components/SectionHeading";
 
 const STATS = [
   {
     Icon: Users,
-    target: 10,
-    suffix: "K+",
-    label: "Lives Impacted",
-    description: "Individuals reached across our programs",
+    target: 35,
+    suffix: "",
+    label: "Active Members",
+    description: "Dedicated Rotarians serving Sirumugai",
   },
   {
     Icon: CheckCircle,
-    target: 50,
+    target: 200,
     suffix: "+",
-    label: "Projects Completed",
-    description: "Successful initiatives delivered on time",
+    label: "Activities Completed",
+    description: "Community-driven initiatives since 2021",
   },
   {
     Icon: Globe,
-    target: 20,
+    target: 5,
     suffix: "+",
-    label: "Countries Reached",
-    description: "Global presence across 5 continents",
+    label: "Years of Service",
+    description: "Chartered 27 September 2021",
   },
   {
-    Icon: DollarSign,
-    prefix: "$",
-    target: 2,
-    suffix: "M+",
-    label: "Funds Raised",
-    description: "Transparent, donor-audited finances",
+    Icon: Heart,
+    target: 50,
+    suffix: "+",
+    label: "Women Supported",
+    description: "Pregnant women through Valar Pirai Kaappom",
   },
 ];
 
 const TESTIMONIALS = [
   {
     quote:
-      "Rotary Club changed our village. We now have clean water and our children go to school every day.",
-    author: "Amara Diallo",
-    location: "Senegal",
-    avatar: "A",
+      "The Valar Pirai Kaappom program provided us with nutritious food during our pregnancy. We are deeply grateful to Rotary Sirumugai for their care and support.",
+    author: "Community Member",
+    location: "Sirumugai, Tamil Nadu",
+    avatar: "C",
   },
   {
     quote:
-      "The microfinance program helped me start my own tailoring business. Today I employ 5 women.",
-    author: "Priya Sharma",
-    location: "India",
-    avatar: "P",
+      "The wheelchair provided by Rotary Sirumugai has given me independence I never thought possible. Their kindness has truly changed my life.",
+    author: "Beneficiary",
+    location: "Sirumugai, Coimbatore District",
+    avatar: "B",
   },
 ];
 
@@ -67,14 +66,14 @@ export default function ImpactSection() {
       <div className="container-custom relative z-10">
         <SectionHeading
           eyebrow="Our Impact"
-          title="Numbers That Tell Our Story"
-          subtitle="Every statistic represents a life changed, a community strengthened, and a future made brighter."
+          title="Five Years of Service in Numbers"
+          subtitle="Every statistic represents a life changed, a community strengthened, and a future made brighter — right here in Sirumugai."
           light
         />
 
         {/* ── Stat Cards ── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
-          {STATS.map(({ Icon, target, suffix, prefix, label, description }) => (
+          {STATS.map(({ Icon, target, suffix, label, description }) => (
             <div
               key={label}
               className="group flex flex-col items-center text-center p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand/50 hover:-translate-y-2 transition-all duration-300 ease-in-out"
@@ -86,7 +85,7 @@ export default function ImpactSection() {
                 <AnimatedCounter
                   target={target}
                   suffix={suffix ?? ""}
-                  prefix={prefix ?? ""}
+                  prefix=""
                   duration={1800}
                 />
               </span>

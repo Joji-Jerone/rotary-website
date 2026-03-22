@@ -14,9 +14,9 @@ export default function ProjectsSection() {
     >
       <div className="container-custom">
         <SectionHeading
-          eyebrow="What We Do"
-          title="Our Active Projects"
-          subtitle="From rural infrastructure to urban education, our projects span continents and disciplines — all united by one goal: lasting, community-driven impact."
+          eyebrow="Our Work"
+          title="Making a Difference in Sirumugai"
+          subtitle="See how our Rotary club has made a difference in the lives of the people around Sirumugai."
         />
 
         {/* ── Project Cards Grid ── */}

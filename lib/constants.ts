@@ -13,60 +13,60 @@ export const NAV_LINKS = [
 export const PROJECTS = [
   {
     id: 1,
-    title: "Clean Water Initiative",
+    title: "Educational Assistance",
     description:
-      "Providing access to safe drinking water in 15 rural communities, installing 40+ boreholes and filtration systems.",
-    image: "https://picsum.photos/seed/water1/800/600",
-    tag: "Infrastructure",
-  },
-  {
-    id: 2,
-    title: "Education for All",
-    description:
-      "Building schools and funding scholarships for over 2,000 underprivileged children across the region.",
+      "Rotary Sirumugai pays college and school fees for students in and around Sirumugai who genuinely cannot pay them due to unavoidable family circumstances.",
     image: "https://picsum.photos/seed/education2/800/600",
     tag: "Education",
   },
   {
-    id: 3,
-    title: "Healthcare Outreach",
+    id: 2,
+    title: "Peace Building",
     description:
-      "Mobile medical camps serving 30 remote villages with essential health services and free medicine.",
-    image: "https://picsum.photos/seed/health3/800/600",
-    tag: "Healthcare",
+      "Rotary Sirumugai provides wheelchairs and tricycles to persons with disabilities in and around Sirumugai who are not in a financial position to obtain them on their own.",
+    image: "https://picsum.photos/seed/peace2/800/600",
+    tag: "Peace",
+  },
+  {
+    id: 3,
+    title: "Water, Sanitation, and Hygiene",
+    description:
+      "For the tribal people in and around Sirumugai locality, our club, along with donors from other Rotary clubs, has provided water pots and baskets to improve sanitation and hygiene.",
+    image: "https://picsum.photos/seed/water1/800/600",
+    tag: "WASH",
   },
   {
     id: 4,
-    title: "Women Empowerment",
+    title: "Basic Education and Literacy",
     description:
-      "Skill development and microfinance programs enabling 500+ women to launch their own enterprises.",
-    image: "https://picsum.photos/seed/women4/800/600",
-    tag: "Empowerment",
+      "For 3 government schools in and around Sirumugai, we sponsor an online self-learning training program for 8th-grade students for the National Means Cum Merit Scholarship Test, and an online self-mock-test program for 12th-grade students preparing for NEET and JEE. For 2025–26, we supported 230 students.",
+    image: "https://picsum.photos/seed/literacy4/800/600",
+    tag: "Literacy",
   },
   {
     id: 5,
-    title: "Reforestation Drive",
+    title: "Maternal and Child Health",
     description:
-      "Planting 100,000 trees and restoring degraded land in partnership with local farming communities.",
-    image: "https://picsum.photos/seed/trees5/800/600",
-    tag: "Environment",
+      "In remote rural areas around Sirumugai, we sponsor \u2018Valar Pirai Kaappom\u2019 — a program providing nutritious food for pregnant women. It has crossed 100+ weeks and benefited more than 50 pregnant women from economically weaker backgrounds.",
+    image: "https://picsum.photos/seed/health3/800/600",
+    tag: "Health",
   },
   {
     id: 6,
-    title: "Disaster Relief",
+    title: "Supporting the Environment",
     description:
-      "Emergency response and long-term rehabilitation for families affected by floods and earthquakes.",
-    image: "https://picsum.photos/seed/relief6/800/600",
-    tag: "Relief",
+      "We have planted and are maintaining more than 100 trees in and around Sirumugai. We also conduct awareness programs to reduce plastic usage and have removed large amounts of plastic, glass, and waste, ensuring proper disposal through treatment facilities.",
+    image: "https://picsum.photos/seed/trees5/800/600",
+    tag: "Environment",
   },
 ] as const;
 
 // ── Impact / Achievement Stats ────────────────────────────────────────────────
 export const IMPACT_STATS = [
-  { value: "10K+",  label: "Lives Impacted",    icon: "Users" },
-  { value: "50+",   label: "Projects Completed", icon: "CheckCircle" },
-  { value: "20+",   label: "Countries Reached",  icon: "Globe" },
-  { value: "$2M+",  label: "Funds Raised",       icon: "DollarSign" },
+  { value: "35",    label: "Active Members",      icon: "Users" },
+  { value: "200+",  label: "Activities Completed", icon: "CheckCircle" },
+  { value: "5+",    label: "Years of Service",     icon: "Globe" },
+  { value: "50+",   label: "Women Supported",      icon: "Heart" },
 ] as const;
 
 // ── Certifications & Trust Signals ───────────────────────────────────────────
@@ -85,9 +85,9 @@ export const FINANCIALS = [
 
 // ── Contact Information ───────────────────────────────────────────────────────
 export const CONTACT_INFO = {
-  address: "123 Humanitarian Ave, Geneva, Switzerland 1211",
-  email:   "contact@hopefoundation.org",
-  phone:   "+41 22 000 0000",
+  address: "Sirumugai, Coimbatore District, Tamil Nadu, India",
+  email:   "ezhilkarthi@gmail.com",
+  phone:   "+91 90033 09696",
 } as const;
 
 // ── Social Links ──────────────────────────────────────────────────────────────

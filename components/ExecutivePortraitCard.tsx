@@ -11,12 +11,6 @@ type ExecutivePortraitCardProps = {
   bio?: string;
 };
 
-function getBioSnippet(bio: string, maxChars = 140) {
-  const trimmed = bio.trim();
-  if (trimmed.length <= maxChars) return trimmed;
-  return `${trimmed.slice(0, maxChars).trimEnd()}...`;
-}
-
 export default function ExecutivePortraitCard({
   name,
   label,
@@ -27,7 +21,6 @@ export default function ExecutivePortraitCard({
   bio,
 }: ExecutivePortraitCardProps) {
   const hasContact = Boolean(phone || email);
-  const bioSnippet = bio ? getBioSnippet(bio) : "";
 
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out bg-white">
@@ -86,11 +79,6 @@ export default function ExecutivePortraitCard({
             </div>
           ) : null}
 
-          {bio ? (
-            <p className="text-white/75 text-xs leading-relaxed w-full max-h-16 overflow-hidden mt-3">
-              {bioSnippet}
-            </p>
-          ) : null}
         </div>
       </div>
 
@@ -131,7 +119,7 @@ export default function ExecutivePortraitCard({
       {/* Bio below contact bar */}
       {bio ? (
         <div className="px-4 pb-4 border-t border-gray-100 pt-3">
-          <p className="text-gray-500 text-xs leading-relaxed">{bioSnippet}</p>
+          <p className="text-gray-500 text-xs leading-relaxed">{bio}</p>
         </div>
       ) : null}
     </div>

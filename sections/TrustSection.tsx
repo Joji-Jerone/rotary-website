@@ -64,8 +64,8 @@ const BOARD = [
     bio: "Proprietor of Medvann Construction, with 26 years of experience in civil engineering, including six years as a Planning Engineer in the Gulf. Chartered Secretary of the Rotary Club of Sirumugai, Charter Chairman of Sirumugai Rotary Trust, and President of the Rotary Club of Sirumugai for 2023–24.",
     image: "/images/executives/9.Ezhil Vannan.R.jpg",
     initial: "E",
-    phone: "9865810325",
-    email: "sirumugairotarytrust@gmail.com",
+    phone: "+91 9865810325",
+    email: "medvann@gmail.com",
   },
   {
     name: "Venu Shankar V.",
@@ -82,8 +82,8 @@ const BOARD = [
     bio: "Co-Founder of 5Lobes Technologies, an innovative IT company with 50% of its resources based in Sirumugai. Born in Gobi and raised in Sirumugai, Dhinesh has worked across major Indian cities and internationally, gaining experience in inland logistics and management consultancy in India and the USA. He now brings global insights back to his hometown.",
     image: "/images/executives/8.Dinesh kumar.M.JPG",
     initial: "D",
-    phone: "9500041394",
-    email: "sirumugairotarytrust@gmail.com",
+    phone: "+91 9500041394",
+    email: "mtdk79@gmail.com",
   },
 ];
 

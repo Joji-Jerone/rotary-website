@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import LinkButton from "@/components/LinkButton";
-import { ArrowRight, ExternalLink } from "lucide-react";
 import { PROJECTS } from "@/lib/constants";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -43,13 +42,7 @@ export default function ProjectsSection() {
                   </Badge>
                 </div>
 
-                {/* Dark overlay on hover with centered CTA */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                  <span className="inline-flex items-center gap-2 bg-white text-brand font-semibold text-sm px-5 py-2.5 rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors duration-200">
-                    <ExternalLink className="h-4 w-4" />
-                    Learn More
-                  </span>
-                </div>
+
               </div>
 
               {/* ── Card Body ── */}
@@ -60,14 +53,6 @@ export default function ProjectsSection() {
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
-                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                  <button className="text-brand hover:text-brand-600 font-semibold text-sm flex items-center gap-1 transition-colors duration-200">
-                    Read full story <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
-                  <div className="w-8 h-8 rounded-full bg-brand-50 flex items-center justify-center group-hover:bg-brand transition-colors duration-200">
-                    <ArrowRight className="h-4 w-4 text-brand group-hover:text-white transition-colors duration-200" />
-                  </div>
-                </div>
               </div>
             </div>
           ))}

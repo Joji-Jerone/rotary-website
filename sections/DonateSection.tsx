@@ -196,7 +196,7 @@ export default function DonateSection() {
                     UPI ID
                   </p>
                   <div className="flex items-center gap-2 bg-brand-50 border border-brand-100 rounded-xl px-4 py-3">
-                    <span className="flex-1 text-sm font-mono font-semibold text-ngo-black tracking-wide">
+                    <span className="flex-1 text-sm font-sans font-semibold text-ngo-black tracking-wide">
                       {UPI_ID}
                     </span>
                     <button

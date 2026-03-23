@@ -27,13 +27,12 @@ export default function ExecutivePortraitCard({
   bio,
 }: ExecutivePortraitCardProps) {
   const hasContact = Boolean(phone || email);
-  const showBio = !hasContact && Boolean(bio);
   const bioSnippet = bio ? getBioSnippet(bio) : "";
 
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out bg-white">
       {/* Portrait image */}
-      <div className="relative aspect-[4/5] overflow-hidden">
+      <div className="relative aspect-[3/4] overflow-hidden">
         <Image
           src={image}
           alt={name}
@@ -87,7 +86,7 @@ export default function ExecutivePortraitCard({
             </div>
           ) : null}
 
-          {showBio ? (
+          {bio ? (
             <p className="text-white/75 text-xs leading-relaxed w-full max-h-16 overflow-hidden mt-3">
               {bioSnippet}
             </p>
@@ -128,6 +127,13 @@ export default function ExecutivePortraitCard({
           </div>
         ) : null}
       </div>
+
+      {/* Bio below contact bar */}
+      {bio ? (
+        <div className="px-4 pb-4 border-t border-gray-100 pt-3">
+          <p className="text-gray-500 text-xs leading-relaxed">{bioSnippet}</p>
+        </div>
+      ) : null}
     </div>
   );
 }

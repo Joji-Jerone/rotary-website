@@ -6,13 +6,13 @@ import {
   HeartHandshake,
   Users,
   CheckCircle,
-  Globe,
+  Trophy,
 } from "lucide-react";
 
 const STATS = [
   { value: "10K+", label: "Lives Impacted", Icon: Users },
   { value: "50+", label: "Projects Done", Icon: CheckCircle },
-  { value: "20+", label: "Countries Reached", Icon: Globe },
+  { value: "20+", label: "Awards Obtained ", Icon: Trophy },
 ];
 
 export default function HeroSection() {
@@ -144,17 +144,17 @@ export default function HeroSection() {
               </div>
               <div>
                 <p className="text-sm font-bold text-ngo-black">
-                  Rotary International
+                  Rotary Club Of Sirumugai
                 </p>
                 <p className="text-xs text-gray-400">
-                  Est. 1905 &bull; Service Above Self
+                  Est. 2021 &bull; Service Above Self
                 </p>
               </div>
             </div>
 
             {/* Floating years badge */}
             <div className="absolute -top-4 -right-4 bg-brand text-white rounded-2xl px-4 py-3 shadow-lg shadow-brand/30 text-center">
-              <p className="text-3xl font-bold leading-none">20+</p>
+              <p className="text-3xl font-bold leading-none">4+</p>
               <p className="text-xs opacity-90 mt-1">
                 Years of
                 <br />

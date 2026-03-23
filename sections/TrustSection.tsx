@@ -61,23 +61,29 @@ const BOARD = [
   {
     name: "Ezhilvannan R.",
     title: "Chairman",
-    bio: "Proprietor of Medvann Construction with 26 years of civil engineering experience, including six years as a Planning Engineer in the Gulf. Charter Chairman of Sirumugai Rotary Trust and President of Rotary Club of Sirumugai 2023–24.",
-    image: "https://picsum.photos/seed/board-chairman/400/500",
+    bio: "Proprietor of Medvann Construction, with 26 years of experience in civil engineering, including six years as a Planning Engineer in the Gulf. Chartered Secretary of the Rotary Club of Sirumugai, Charter Chairman of Sirumugai Rotary Trust, and President of the Rotary Club of Sirumugai for 2023–24.",
+    image: "/images/executives/9.Ezhil Vannan.R.jpg",
     initial: "E",
+    phone: "9865810325",
+    email: "sirumugairotarytrust@gmail.com",
   },
   {
     name: "Venu Shankar V.",
     title: "Secretary & Charter President, Rotary Sirumugai",
-    bio: "Engineering plastics expert (CIPET), Promoter & Proprietor of Pearl Industrials, Coimbatore — 30+ years designing plastic & metal components for electrical and poultry industries in India and beyond.",
-    image: "https://picsum.photos/seed/board-secretary/400/500",
+    bio: "An engineering plastics expert with a degree from CIPET (Ahmedabad & Chennai). Promoter & Proprietor of Pearl Industrials, Coimbatore — 30+ years designing plastic & metal components for the electrical and poultry industries in India and beyond. Known for high business ethics and a commitment to innovation and quality.",
+    image: "/images/executives/Venu Shankar.jpg",
     initial: "V",
+    phone: "9894662299",
+    email: "pearlindustrials@gmail.com",
   },
   {
     name: "Dhinesh Kumar M.",
     title: "Treasurer",
-    bio: "Co-Founder of 5Lobes Technologies, an IT company with 50 % of its resources based in Sirumugai. Partnerships across inland logistics and management consultancy firms in India and the USA.",
-    image: "https://picsum.photos/seed/board-treasurer/400/500",
+    bio: "Co-Founder of 5Lobes Technologies, an innovative IT company with 50% of its resources based in Sirumugai. Born in Gobi and raised in Sirumugai, Dhinesh has worked across major Indian cities and internationally, gaining experience in inland logistics and management consultancy in India and the USA. He now brings global insights back to his hometown.",
+    image: "/images/executives/8.Dinesh kumar.M.JPG",
     initial: "D",
+    phone: "9500041394",
+    email: "sirumugairotarytrust@gmail.com",
   },
 ];
 
@@ -110,7 +116,6 @@ export default function TrustSection() {
       aria-label="Sirumugai Rotary Trust"
     >
       <div className="container-custom space-y-12">
-
         {/* ── Section heading ── */}
         <SectionHeading
           eyebrow="About the Trust"
@@ -121,7 +126,7 @@ export default function TrustSection() {
         {/* ── Banner image ── */}
         <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
           <Image
-            src="https://picsum.photos/seed/trust-community/1200/500"
+            src="/images/trustImage.png"
             alt="Sirumugai Rotary Trust community activities"
             fill
             className="object-cover object-center"
@@ -131,13 +136,15 @@ export default function TrustSection() {
           <div className="absolute inset-0 flex items-center px-10">
             <div className="max-w-sm">
               <p className="text-white/80 text-sm font-semibold uppercase tracking-widest mb-2">
-                Founded 2022
+                Founded 2021
               </p>
               <h3
                 className="text-white text-2xl md:text-3xl font-bold leading-snug"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                Every Rupee Counts,<br />Every Action Matters
+                Every Rupee Counts,
+                <br />
+                Every Action Matters
               </h3>
             </div>
           </div>
@@ -152,21 +159,21 @@ export default function TrustSection() {
             Welcome to Sirumugai Rotary Trust
           </h3>
           <p className="text-gray-600 leading-relaxed text-sm">
-            At Sirumugai Rotary Trust, we are dedicated to making a meaningful difference in
-            the lives of individuals and communities. Founded in{" "}
-            <strong className="text-ngo-black">2022</strong>, our mission is to provide
-            scholarships and financial aid to deserving poor students, promote healthcare
-            access in rural areas, provide financial assistance to deserving patients who need
-            medical treatments, operations, equipment or artificial limbs, and provide food for
-            the starving and needy. Guided by a commitment to integrity, compassion, and
-            sustainable impact, we strive to address our time&rsquo;s most pressing social
-            challenges.
+            At Sirumugai Rotary Trust, we are dedicated to making a meaningful
+            difference in the lives of individuals and communities. Founded in{" "}
+            <strong className="text-ngo-black">2022</strong>, our mission is to
+            provide scholarships and financial aid to deserving poor students,
+            promote healthcare access in rural areas, provide financial
+            assistance to deserving patients who need medical treatments,
+            operations, equipment or artificial limbs, and provide food for the
+            starving and needy. Guided by a commitment to integrity, compassion,
+            and sustainable impact, we strive to address our time&rsquo;s most
+            pressing social challenges.
           </p>
         </CardWrapper>
 
         {/* ── Vision + Mission ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
           {/* Vision */}
           <CardWrapper className="p-6">
             <h3 className="font-bold text-ngo-black text-lg mb-4 flex items-center gap-2">
@@ -176,10 +183,10 @@ export default function TrustSection() {
               Our Vision
             </h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              We envision a world where everyone has access to the resources and opportunities
-              needed to thrive. Our long-term goal is to create a society where disparities are
-              reduced, allowing everyone to live with dignity and hope, regardless of their
-              background.
+              We envision a world where everyone has access to the resources and
+              opportunities needed to thrive. Our long-term goal is to create a
+              society where disparities are reduced, allowing everyone to live
+              with dignity and hope, regardless of their background.
             </p>
           </CardWrapper>
 
@@ -197,13 +204,15 @@ export default function TrustSection() {
                   <div className="w-7 h-7 rounded-lg bg-brand-50 flex items-center justify-center shrink-0 mt-0.5">
                     <pt.icon className="h-3.5 w-3.5 text-brand" />
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{pt.text}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {pt.text}
+                  </p>
                 </li>
               ))}
             </ul>
             <p className="text-xs text-gray-400 mt-4 pt-3 border-t border-gray-100 leading-relaxed">
-              We are committed to making a lasting impact through strategic partnerships,
-              innovative projects, and a people-centric approach.
+              We are committed to making a lasting impact through strategic
+              partnerships, innovative projects, and a people-centric approach.
             </p>
           </CardWrapper>
         </div>
@@ -222,8 +231,12 @@ export default function TrustSection() {
                 <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center mx-auto mb-3 group-hover:bg-brand transition-colors duration-300">
                   <val.icon className="h-5 w-5 text-brand group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h4 className="font-bold text-ngo-black text-sm mb-2">{val.title}</h4>
-                <p className="text-gray-500 text-xs leading-relaxed">{val.desc}</p>
+                <h4 className="font-bold text-ngo-black text-sm mb-2">
+                  {val.title}
+                </h4>
+                <p className="text-gray-500 text-xs leading-relaxed">
+                  {val.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -242,6 +255,8 @@ export default function TrustSection() {
                 label={member.title}
                 image={member.image}
                 initial={member.initial}
+                phone={member.phone}
+                email={member.email}
                 bio={member.bio}
               />
             ))}
@@ -269,18 +284,23 @@ export default function TrustSection() {
               >
                 <BadgeCheck className="h-5 w-5 text-brand mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-xs text-gray-500 font-medium">{item.label}</p>
-                  <p className="text-sm font-bold text-ngo-black">{item.value}</p>
+                  <p className="text-xs text-gray-500 font-medium">
+                    {item.label}
+                  </p>
+                  <p className="text-sm font-bold text-ngo-black">
+                    {item.value}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
           <p className="text-xs text-gray-500 leading-relaxed">
-            Sirumugai Rotary Trust has been approved by the Income Tax Department of India
-            (approval no. <strong className="text-ngo-black">ABHTS4005K24CH02</strong>) to
-            carry out its objectives from 2024–25 to 2028–29. Approval under clause
-            (ii)(b) of the second proviso to section 80G(5) of the Income Tax Act, 1961,
-            has been granted subject to certain conditions.
+            Sirumugai Rotary Trust has been approved by the Income Tax
+            Department of India (approval no.{" "}
+            <strong className="text-ngo-black">ABHTS4005K24CH02</strong>) to
+            carry out its objectives from 2024–25 to 2028–29. Approval under
+            clause (ii)(b) of the second proviso to section 80G(5) of the Income
+            Tax Act, 1961, has been granted subject to certain conditions.
           </p>
         </CardWrapper>
 
@@ -290,9 +310,10 @@ export default function TrustSection() {
             Get Involved
           </p>
           <p className="text-center text-gray-500 text-sm max-w-xl mx-auto mb-7">
-            We believe everyone can contribute to making the world a better place. Whether
-            you want to donate, volunteer, or partner with us — your support will help us
-            expand our impact and bring hope to more lives.
+            We believe everyone can contribute to making the world a better
+            place. Whether you want to donate, volunteer, or partner with us —
+            your support will help us expand our impact and bring hope to more
+            lives.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {INVOLVE.map((item) => (
@@ -304,8 +325,12 @@ export default function TrustSection() {
                 <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mx-auto mb-3 group-hover:bg-brand transition-colors duration-300">
                   <item.icon className="h-6 w-6 text-brand group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h4 className="font-bold text-ngo-black text-base mb-1">{item.label}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                <h4 className="font-bold text-ngo-black text-base mb-1">
+                  {item.label}
+                </h4>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </a>
             ))}
           </div>
@@ -323,9 +348,12 @@ export default function TrustSection() {
             <div className="flex items-start gap-3">
               <MapPin className="h-5 w-5 text-brand shrink-0 mt-0.5" />
               <div>
-                <p className="text-xs text-gray-400 font-medium mb-0.5">Address</p>
+                <p className="text-xs text-gray-400 font-medium mb-0.5">
+                  Address
+                </p>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  608/2, VOC Nagar, 4th Street, Sirumugai,<br />
+                  608/2, VOC Nagar, 4th Street, Sirumugai,
+                  <br />
                   Coimbatore DT, Tamil Nadu – 641302
                 </p>
               </div>
@@ -333,7 +361,9 @@ export default function TrustSection() {
             <div className="flex items-start gap-3">
               <Mail className="h-5 w-5 text-brand shrink-0 mt-0.5" />
               <div>
-                <p className="text-xs text-gray-400 font-medium mb-0.5">Email</p>
+                <p className="text-xs text-gray-400 font-medium mb-0.5">
+                  Email
+                </p>
                 <a
                   href="mailto:sirumugairotarytrust@gmail.com"
                   className="text-sm text-brand hover:underline break-all"
@@ -345,9 +375,15 @@ export default function TrustSection() {
             <div className="flex items-start gap-3">
               <Phone className="h-5 w-5 text-brand shrink-0 mt-0.5" />
               <div>
-                <p className="text-xs text-gray-400 font-medium mb-0.5">Phone</p>
+                <p className="text-xs text-gray-400 font-medium mb-0.5">
+                  Phone
+                </p>
                 <div className="space-y-0.5">
-                  {["+91 98658 10325", "+91 95000 41394", "+91 98946 62299"].map((p) => (
+                  {[
+                    "+91 98658 10325",
+                    "+91 95000 41394",
+                    "+91 98946 62299",
+                  ].map((p) => (
                     <a
                       key={p}
                       href={`tel:${p.replace(/\s/g, "")}`}
@@ -361,7 +397,6 @@ export default function TrustSection() {
             </div>
           </div>
         </CardWrapper>
-
       </div>
     </section>
   );

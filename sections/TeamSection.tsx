@@ -42,7 +42,7 @@ const TEAM = [
     name: "Sampath Kumar N",
     phone: "9842209262",
     email: "sbatexmotaro@gmail.com",
-    image: "https://picsum.photos/seed/person-foundation/400/500",
+    image: "/images/executives/Sampath Kumar.jpg",
   },
   {
     role: "Club Membership Chair",

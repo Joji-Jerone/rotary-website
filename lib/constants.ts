@@ -1,12 +1,12 @@
 // ── Navigation Links ──────────────────────────────────────────────────────────
 export const NAV_LINKS = [
-  { label: "Home",         href: "#home" },
-  { label: "About Us",     href: "#about" },
-  { label: "Our Work",     href: "#projects" },
-  { label: "Impact",       href: "#impact" },
-  { label: "Trust",        href: "#trust" },
-  { label: "Team",         href: "#team" },
-  { label: "Contact",      href: "#contact" },
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
+  { label: "Our Work", href: "#projects" },
+  { label: "Impact", href: "#impact" },
+  { label: "Trust", href: "#trust" },
+  { label: "Team", href: "#team" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 // ── Projects / Our Work ───────────────────────────────────────────────────────
@@ -63,49 +63,68 @@ export const PROJECTS = [
 
 // ── Impact / Achievement Stats ────────────────────────────────────────────────
 export const IMPACT_STATS = [
-  { value: "35",    label: "Active Members",      icon: "Users" },
-  { value: "200+",  label: "Activities Completed", icon: "CheckCircle" },
-  { value: "5+",    label: "Years of Service",     icon: "Globe" },
-  { value: "50+",   label: "Women Supported",      icon: "Heart" },
+  { value: "35", label: "Active Members", icon: "Users" },
+  { value: "200+", label: "Activities Completed", icon: "CheckCircle" },
+  { value: "4+", label: "Years of Service", icon: "Globe" },
+  { value: "50+", label: "Women Supported", icon: "Heart" },
 ] as const;
 
 // ── Certifications & Trust Signals ───────────────────────────────────────────
 export const CERTIFICATIONS = [
-  { label: "80G Approved",        description: "Approval no. ABHTS4005K24CH02 — 2024 to 2029" },
-  { label: "PAN: ABHTS4005K",     description: "Registered with the Income Tax Department" },
-  { label: "Registered Trust",    description: "Legally constituted charitable trust" },
-  { label: "IT Act Section 80G",  description: "All donations are tax-deductible" },
+  {
+    label: "80G Approved",
+    description: "Approval no. ABHTS4005K24CH02 — 2024 to 2029",
+  },
+  {
+    label: "PAN: ABHTS4005K",
+    description: "Registered with the Income Tax Department",
+  },
+  {
+    label: "Registered Trust",
+    description: "Legally constituted charitable trust",
+  },
+  {
+    label: "IT Act Section 80G",
+    description: "All donations are tax-deductible",
+  },
 ] as const;
 
 export const FINANCIALS = [
-  { label: "Program Expenses",     pct: 82, color: "bg-brand" },
+  { label: "Program Expenses", pct: 82, color: "bg-brand" },
   { label: "Administrative Costs", pct: 10, color: "bg-brand-300" },
-  { label: "Fundraising Costs",    pct: 8,  color: "bg-brand-100" },
+  { label: "Fundraising Costs", pct: 8, color: "bg-brand-100" },
 ] as const;
 
 // ── Contact Information ───────────────────────────────────────────────────────
 export const CONTACT_INFO = {
-  address: "608/2, VOC Nagar, 4th Street, Sirumugai, Coimbatore DT, Tamil Nadu – 641302",
-  email:   "sirumugairotarytrust@gmail.com",
-  phone:   "+91 98658 10325",
+  address:
+    "608/2, VOC Nagar, 4th Street, Sirumugai, Coimbatore DT, Tamil Nadu – 641302",
+  email: "sirumugairotarytrust@gmail.com",
+  phone: "+91 98658 10325",
 } as const;
 
 // ── Social Links ──────────────────────────────────────────────────────────────
 export const SOCIAL_LINKS = [
-  { platform: "Twitter",   href: "#", icon: "Twitter" },
-  { platform: "Facebook",  href: "#", icon: "Facebook" },
+  { platform: "Twitter", href: "#", icon: "Twitter" },
+  { platform: "Facebook", href: "#", icon: "Facebook" },
   { platform: "Instagram", href: "#", icon: "Instagram" },
-  { platform: "LinkedIn",  href: "#", icon: "Linkedin" },
-  { platform: "YouTube",   href: "#", icon: "Youtube" },
+  { platform: "LinkedIn", href: "#", icon: "Linkedin" },
+  { platform: "YouTube", href: "#", icon: "Youtube" },
 ] as const;
 
 // ── Donation Amounts ──────────────────────────────────────────────────────────
-export const DONATION_AMOUNTS = ["$10", "$25", "$50", "$100", "Custom"] as const;
+export const DONATION_AMOUNTS = [
+  "$10",
+  "$25",
+  "$50",
+  "$100",
+  "Custom",
+] as const;
 
 // ── Footer Legal Links ────────────────────────────────────────────────────────
 export const LEGAL_LINKS = [
   "Privacy Policy",
   "Terms of Use",
   "Cookie Policy",
-  "Annual Report",
+  "Club Roster",
 ] as const;

@@ -4,7 +4,7 @@ export const NAV_LINKS = [
   { label: "About Us",     href: "#about" },
   { label: "Our Work",     href: "#projects" },
   { label: "Impact",       href: "#impact" },
-  { label: "Transparency", href: "#transparency" },
+  { label: "Trust",        href: "#trust" },
   { label: "Team",         href: "#team" },
   { label: "Contact",      href: "#contact" },
 ] as const;
@@ -71,10 +71,10 @@ export const IMPACT_STATS = [
 
 // ── Certifications & Trust Signals ───────────────────────────────────────────
 export const CERTIFICATIONS = [
-  { label: "GuideStar Platinum",  description: "Highest transparency rating awarded" },
-  { label: "ISO 9001:2015",       description: "Quality management system certified" },
-  { label: "FCRA Registered",     description: "Foreign contribution compliant" },
-  { label: "80G Tax Exemption",   description: "All donations are tax-deductible" },
+  { label: "80G Approved",        description: "Approval no. ABHTS4005K24CH02 — 2024 to 2029" },
+  { label: "PAN: ABHTS4005K",     description: "Registered with the Income Tax Department" },
+  { label: "Registered Trust",    description: "Legally constituted charitable trust" },
+  { label: "IT Act Section 80G",  description: "All donations are tax-deductible" },
 ] as const;
 
 export const FINANCIALS = [
@@ -85,9 +85,9 @@ export const FINANCIALS = [
 
 // ── Contact Information ───────────────────────────────────────────────────────
 export const CONTACT_INFO = {
-  address: "Sirumugai, Coimbatore District, Tamil Nadu, India",
-  email:   "ezhilkarthi@gmail.com",
-  phone:   "+91 90033 09696",
+  address: "608/2, VOC Nagar, 4th Street, Sirumugai, Coimbatore DT, Tamil Nadu – 641302",
+  email:   "sirumugairotarytrust@gmail.com",
+  phone:   "+91 98658 10325",
 } as const;
 
 // ── Social Links ──────────────────────────────────────────────────────────────

@@ -126,13 +126,13 @@ export default function HeroSection() {
               animationDelay: "200ms",
             }}
           >
-            <div className="relative h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
+            <div className="relative w-full aspect-[1280/575] rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
               <Image
-                src="https://picsum.photos/seed/rotary-community/800/900"
+                src="/images/homepage.jpeg"
                 alt="Rotary Club volunteers serving the community"
                 fill
                 priority
-                className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                className="object-contain object-center transition-transform duration-700 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

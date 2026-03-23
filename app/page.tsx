@@ -5,7 +5,7 @@ import HeroSection         from "@/sections/HeroSection";
 import AboutSection        from "@/sections/AboutSection";
 import ProjectsSection     from "@/sections/ProjectsSection";
 import ImpactSection       from "@/sections/ImpactSection";
-import TransparencySection from "@/sections/TransparencySection";
+import TrustSection        from "@/sections/TrustSection";
 import TeamSection         from "@/sections/TeamSection";
 import DonateSection       from "@/sections/DonateSection";
 import ContactSection      from "@/sections/ContactSection";
@@ -18,7 +18,7 @@ export default function Home() {
       <AboutSection />
       <ProjectsSection />
       <ImpactSection />
-      <TransparencySection />
+      <TrustSection />
       <TeamSection />
       <DonateSection />
       <ContactSection />

@@ -42,18 +42,12 @@ export default function Navbar() {
         {/* ── Logo ── */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 group"
-          aria-label="Rotary Club Home"
+          className="group"
+          aria-label="Rotary Club of Sirumugai Home"
         >
-          <div className="group-hover:scale-110 transition-transform duration-200 drop-shadow-md">
-            <RotaryLogo size={36} />
+          <div className="group-hover:opacity-80 transition-opacity duration-200">
+            <RotaryLogo size={56} variant="full" />
           </div>
-          <span
-            className="text-xl font-bold text-ngo-black group-hover:text-brand transition-colors duration-200"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Rotary Club
-          </span>
         </Link>
 
         {/* ── Desktop Navigation ── */}
@@ -89,11 +83,8 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72 p-0">
             <SheetHeader className="px-6 py-5 border-b border-gray-100">
-              <SheetTitle className="flex items-center gap-2.5">
-                <RotaryLogo size={32} />
-                <span className="text-ngo-black font-bold" style={{ fontFamily: "var(--font-heading)" }}>
-                  Rotary Club
-                </span>
+              <SheetTitle>
+                <RotaryLogo size={52} variant="full" />
               </SheetTitle>
             </SheetHeader>
 

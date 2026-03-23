@@ -20,14 +20,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* ── Brand Column ── */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <RotaryLogo size={36} />
-              <span
-                className="text-xl font-bold"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                Rotary Club
-              </span>
+            <div className="mb-4">
+              <RotaryLogo size={58} variant="full" dark />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-sm">
               Dedicated to building a more equitable world through

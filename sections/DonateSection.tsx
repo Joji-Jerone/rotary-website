@@ -19,7 +19,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-const UPI_ID = "rotaryclub@upi";
+const UPI_ID = "CFST20007693@CUB";
 const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi://pay?pa=${UPI_ID}%26pn=Rotary%20Club%26cu=INR`;
 
 export default function DonateSection() {

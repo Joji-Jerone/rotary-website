@@ -44,7 +44,7 @@ export default function AboutSection() {
             <div className="absolute top-4 -left-4 bg-white rounded-2xl px-4 py-3 shadow-xl border border-gray-200 flex items-center gap-2">
               <Award className="h-5 w-5 text-brand" />
               <span className="text-sm font-semibold text-ngo-black">
-                Rotary District 3201
+                Rotary Dist 3203
               </span>
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function AboutSection() {
               </p>
               <p className="text-gray-600 leading-relaxed text-sm">
                 For more than{" "}
-                <strong className="text-ngo-black">110 years</strong>, Rotary's
+                <strong className="text-ngo-black">110 years</strong>, Rotary&apos;s
                 people of action have used their passion, energy, and
                 intelligence to advance sustainable projects — from literacy
                 and peace to water and health.

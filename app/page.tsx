@@ -18,8 +18,8 @@ export default function Home() {
       <AboutSection />
       <ProjectsSection />
       <ImpactSection />
-      <TrustSection />
       <TeamSection />
+      <TrustSection />
       <DonateSection />
       <ContactSection />
       <Footer />

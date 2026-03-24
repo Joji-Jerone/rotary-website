@@ -73,15 +73,15 @@ export default function AboutSection() {
           </div>
 
           {/* ── Right Column: Text + Cards ── */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             <SectionHeading
               eyebrow="About Rotary"
               title={"A Global Network,\nDriven by Purpose"}
               centered={false}
-              className="mb-3"
+              className="mb-0"
             />
 
-            <div className="space-y-3">
+            <div className="space-y-3 -mt-3">
               <p className="text-gray-600 leading-relaxed text-sm">
                 Rotary is a global network of more than{" "}
                 <strong className="text-ngo-black">1.2 million</strong>{" "}

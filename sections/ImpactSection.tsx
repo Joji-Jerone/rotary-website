@@ -21,7 +21,7 @@ const STATS = [
   },
   {
     Icon: Globe,
-    target: 5,
+    target: 4,
     suffix: "+",
     label: "Years of Service",
     description: "Chartered 27 September 2021",

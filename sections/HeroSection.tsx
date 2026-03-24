@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const STATS = [
-  { value: "10K+", label: "Lives Impacted", Icon: Users },
+  { value: "1K+", label: "Lives Impacted", Icon: Users },
   { value: "50+", label: "Projects Done", Icon: CheckCircle },
   { value: "20+", label: "Awards Obtained ", Icon: Trophy },
 ];

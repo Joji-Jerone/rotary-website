@@ -91,7 +91,7 @@ export default function AboutSection() {
               </p>
               <p className="text-gray-600 leading-relaxed text-sm">
                 For more than{" "}
-                <strong className="text-ngo-black">110 years</strong>,
+                <strong className="text-ngo-black">120 years</strong>,
                 Rotary&apos;s people of action have used their passion, energy,
                 and intelligence to advance sustainable projects — from literacy
                 and peace to water and health.

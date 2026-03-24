@@ -9,10 +9,15 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Rotary Club | Making a Difference",
+  title: "Rotary Club of Sirumugai",
   description:
     "We are committed to sustainable development, education, healthcare, and empowering communities worldwide.",
   keywords: ["NGO", "nonprofit", "charity", "donate", "humanitarian"],
+  icons: {
+    icon: "/images/rotary-favicon.png",
+    shortcut: "/images/rotary-favicon.png",
+    apple: "/images/rotary-favicon.png",
+  },
   openGraph: {
     title: "Rotary Club",
     description: "Making a Difference, One Community at a Time",
@@ -24,9 +29,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${openSans.variable} antialiased`}>
-        {children}
-      </body>
+      <body className={`${openSans.variable} antialiased`}>{children}</body>
     </html>
   );
 }

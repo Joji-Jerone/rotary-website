@@ -19,15 +19,15 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-white overflow-hidden"
+      className="relative min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-3rem)] flex items-center bg-white overflow-hidden"
       aria-label="Hero"
     >
       {/* Decorative shapes */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-50 rounded-full -translate-y-1/3 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-50 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-      <div className="container-custom relative z-10 pt-28 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container-custom relative z-10 pt-24 pb-12 lg:pt-24 lg:pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-16 items-center">
           {/* ── Left: Text Content ── */}
           <div>
             {/* Rotary badge */}
@@ -44,7 +44,7 @@ export default function HeroSection() {
 
             {/* Heading */}
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5 text-ngo-black"
+              className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-5 text-ngo-black"
               style={{
                 fontFamily: "var(--font-heading)",
                 animation: "var(--animate-fade-in-up)",
@@ -58,13 +58,13 @@ export default function HeroSection() {
 
             {/* Subtext */}
             <p
-              className="text-lg text-gray-500 max-w-lg mb-8 leading-relaxed"
+              className="text-base lg:text-base xl:text-lg text-gray-500 max-w-lg mb-6 lg:mb-6 xl:mb-8 leading-relaxed"
               style={{
                 animation: "var(--animate-fade-in-up)",
                 animationDelay: "300ms",
               }}
             >
-              35 members from Sirumugai Rotary club engaged with our global
+              35 members from Rotary Club of Sirumugai engaged with our global
               network of more than 1.2 million neighbours, friends, and leaders,
               who volunteer their skills and resources to solve issues and
               address community needs.
@@ -72,7 +72,7 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="flex flex-col sm:flex-row gap-4 mb-8 lg:mb-8 xl:mb-12"
               style={{
                 animation: "var(--animate-fade-in-up)",
                 animationDelay: "450ms",

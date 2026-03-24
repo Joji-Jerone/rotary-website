@@ -69,7 +69,7 @@ export default function DonateSection() {
 
         {/* ── Main heading ── */}
         <h2
-          className="text-3xl md:text-5xl font-bold text-white mb-5 leading-tight"
+          className="text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-5 leading-tight"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Your Contribution Can

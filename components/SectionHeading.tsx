@@ -18,7 +18,7 @@ export default function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn("mb-14", centered && "text-center", className)}>
+    <div className={cn("mb-10 lg:mb-10 xl:mb-14", centered && "text-center", className)}>
       {eyebrow && (
         <p
           className={cn(

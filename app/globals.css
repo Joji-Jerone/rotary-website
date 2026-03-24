@@ -150,7 +150,13 @@
   html {
     @apply font-sans;
     scroll-behavior: smooth;
-    font-size: 110%;
+    font-size: 100%;
+  }
+  @media (min-width: 1024px) {
+    html { font-size: 100%; }
+  }
+  @media (min-width: 1440px) {
+    html { font-size: 110%; }
   }
   body {
     @apply bg-background text-foreground;
@@ -164,7 +170,7 @@
 /* ── Reusable Section Utility Classes ── */
 @layer components {
   .section-padding {
-    @apply py-16 px-4 md:py-24 md:px-8;
+    @apply py-12 px-4 md:py-16 md:px-8 xl:py-24;
   }
   .section-title {
     @apply text-3xl md:text-4xl font-bold text-ngo-black mb-4;

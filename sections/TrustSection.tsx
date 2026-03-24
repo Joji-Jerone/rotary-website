@@ -124,7 +124,7 @@ export default function TrustSection() {
         />
 
         {/* ── Banner image ── */}
-        <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+        <div className="relative h-52 md:h-64 xl:h-80 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
           <Image
             src="/images/trustImage.png"
             alt="Sirumugai Rotary Trust community activities"
@@ -222,7 +222,7 @@ export default function TrustSection() {
           <p className="text-xs font-semibold text-brand uppercase tracking-widest mb-5 text-center">
             Core Values
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4 xl:gap-5">
             {CORE_VALUES.map((val) => (
               <div
                 key={val.title}

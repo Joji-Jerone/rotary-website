@@ -51,7 +51,7 @@ export default function Navbar() {
         </Link>
 
         {/* ── Desktop Navigation ── */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-7">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -76,7 +76,7 @@ export default function Navbar() {
         {/* ── Mobile Hamburger ── */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger
-            className="md:hidden inline-flex items-center justify-center rounded-xl p-2 text-ngo-black hover:bg-gray-100 hover:text-brand transition-all duration-200"
+            className="lg:hidden inline-flex items-center justify-center rounded-xl p-2 text-ngo-black hover:bg-gray-100 hover:text-brand transition-all duration-200"
             aria-label="Open menu"
           >
             <Menu className="h-6 w-6" />

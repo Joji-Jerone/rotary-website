@@ -1,7 +1,14 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Twitter, Facebook, Instagram, Linkedin, Youtube, X } from "lucide-react";
+import {
+  Twitter,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+  X,
+} from "lucide-react";
 import RotaryLogo from "@/components/RotaryLogo";
 import { NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 
@@ -19,7 +26,7 @@ const LEGAL_POLICIES: Record<string, { title: string; content: string }> = {
     title: "Privacy Policy",
     content: `Last updated: March 2026
 
-Sirumugai Rotary Club ("we", "our", or "us") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.
+Rotary Club of Sirumugai ("we", "our", or "us") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.
 
 Information We Collect
 We may collect personal information that you voluntarily provide to us when you make a donation, sign up for our newsletter, volunteer, or contact us through the website. This may include your name, email address, phone number, mailing address, and payment information.
@@ -50,25 +57,25 @@ We may update this Privacy Policy from time to time. Any changes will be posted 
     title: "Terms of Use",
     content: `Last updated: March 2026
 
-Welcome to the Sirumugai Rotary Club website. By accessing and using this website, you agree to be bound by these Terms of Use.
+Welcome to the Rotary Club of Sirumugai website. By accessing and using this website, you agree to be bound by these Terms of Use.
 
 Acceptance of Terms
 By using this website, you acknowledge that you have read, understood, and agree to be bound by these terms. If you do not agree with any part of these terms, please do not use the website.
 
 Use of the Website
-This website is provided for informational purposes about Sirumugai Rotary Club and its charitable activities. You agree to use the website only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else's use of the website.
+This website is provided for informational purposes about Rotary Club of Sirumugai and its charitable activities. You agree to use the website only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else's use of the website.
 
 Intellectual Property
-All content on this website — including text, graphics, logos, images, and software — is the property of Sirumugai Rotary Club or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content without our prior written consent.
+All content on this website — including text, graphics, logos, images, and software — is the property of Rotary Club of Sirumugai or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content without our prior written consent.
 
 Donations
 All donations made through this website are voluntary and non-refundable unless otherwise required by law. Donation receipts will be provided for tax-deduction purposes in accordance with applicable Indian tax laws under Section 80G of the Income Tax Act.
 
 Disclaimer
-This website and its content are provided "as is" without warranties of any kind, either express or implied. Sirumugai Rotary Club does not warrant that the website will be uninterrupted, error-free, or free of viruses or other harmful components.
+This website and its content are provided "as is" without warranties of any kind, either express or implied. Rotary Club of Sirumugai does not warrant that the website will be uninterrupted, error-free, or free of viruses or other harmful components.
 
 Limitation of Liability
-Sirumugai Rotary Club shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from your use of this website.
+Rotary Club of Sirumugai shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from your use of this website.
 
 Governing Law
 These Terms of Use shall be governed by and construed in accordance with the laws of India. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in Coimbatore, Tamil Nadu.
@@ -81,7 +88,7 @@ For any questions regarding these terms, please contact us at sirumugairotarytru
     title: "Cookie Policy",
     content: `Last updated: March 2026
 
-This Cookie Policy explains how Sirumugai Rotary Club uses cookies and similar technologies when you visit our website.
+This Cookie Policy explains how Rotary Club of Sirumugai uses cookies and similar technologies when you visit our website.
 
 What Are Cookies?
 Cookies are small text files that are placed on your device when you visit a website. They help the website recognise your device and remember certain information about your visit.
@@ -109,7 +116,12 @@ If you have any questions about our use of cookies, please contact us at sirumug
   },
 };
 
-const LEGAL_LINK_KEYS = ["Privacy Policy", "Terms of Use", "Cookie Policy"] as const;
+const LEGAL_LINK_KEYS = [
+  "Privacy Policy",
+  "Terms of Use",
+  "Cookie Policy",
+  "Club Roster",
+] as const;
 
 /* ── Legal Popup Component ────────────────────────────────────────────────── */
 function LegalPopup({
@@ -190,8 +202,8 @@ function LegalPopup({
         {/* Footer */}
         <div className="px-6 py-3 border-t border-gray-100 text-center">
           <p className="text-xs text-gray-400">
-            &copy; {new Date().getFullYear()} Sirumugai Rotary Club. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Rotary Club of Sirumugai. All
+            rights reserved.
           </p>
         </div>
       </div>
@@ -212,7 +224,7 @@ export default function Footer() {
     <>
       <footer className="bg-ngo-black text-white">
         <div className="container-custom mx-auto py-14">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 xl:gap-10">
             {/* ── Brand Column ── */}
             <div className="lg:col-span-2">
               <div className="mb-4">
@@ -270,12 +282,22 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {LEGAL_LINK_KEYS.map((item) => (
                   <li key={item}>
-                    <button
-                      onClick={() => setActivePolicy(item)}
-                      className="text-white/50 hover:text-brand text-sm transition-colors duration-200 text-left"
-                    >
-                      {item}
-                    </button>
+                    {item === "Club Roster" ? (
+                      <a
+                        href="/images/Rotary_Club_Roster.pdf"
+                        download="Rotary_Club_Roster.pdf"
+                        className="text-white/50 hover:text-brand text-sm transition-colors duration-200 text-left"
+                      >
+                        {item}
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => setActivePolicy(item)}
+                        className="text-white/50 hover:text-brand text-sm transition-colors duration-200 text-left"
+                      >
+                        {item}
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -287,12 +309,12 @@ export default function Footer() {
         <div className="border-t border-white/10">
           <div className="container-custom mx-auto py-5 flex flex-col sm:flex-row justify-between items-center gap-2">
             <p className="text-white/40 text-xs">
-              &copy; {year} Sirumugai Rotary Club. All rights reserved.
+              &copy; {year} Rotary Club of Sirumugai. All rights reserved.
             </p>
             <p className="text-white/40 text-xs">
               Powered by{" "}
               <span className="text-white/60 font-medium">
-                5Lobes Technology Solutions
+                5Lobes Technologies Pvt Ltd
               </span>
             </p>
           </div>

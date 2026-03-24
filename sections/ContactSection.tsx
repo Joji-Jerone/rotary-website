@@ -59,7 +59,7 @@ export default function ContactSection() {
           subtitle="Have questions, want to volunteer, or explore a partnership? We'd love to hear from you."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6 xl:gap-8 max-w-5xl mx-auto">
 
           {/* ── Contact Info Column ── */}
           <div className="space-y-4">

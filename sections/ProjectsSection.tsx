@@ -89,11 +89,13 @@ export default function ProjectsSection() {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     const w = Math.min(520, vw - 48);
-    const h = w + 200; // image + text estimate
+    const maxH = vh - 48; // leave 24px top + 24px bottom
+    const h = Math.min(w + 200, maxH); // constrain to viewport
     return {
       top: Math.max(24, (vh - h) / 2),
       left: Math.max(24, (vw - w) / 2),
       width: w,
+      maxHeight: maxH,
     };
   };
 
@@ -186,11 +188,12 @@ export default function ProjectsSection() {
         const expanded = getExpandedStyle();
         return (
           <div
-            className="fixed z-50 overflow-hidden"
+            className="fixed z-50 overflow-auto"
             style={{
               top: isExpanded ? expanded.top : originRect.top,
               left: isExpanded ? expanded.left : originRect.left,
               width: isExpanded ? expanded.width : originRect.width,
+              maxHeight: isExpanded ? expanded.maxHeight : undefined,
               borderRadius: "1.5rem",
               boxShadow: isExpanded
                 ? "0 25px 60px -12px rgba(0,0,0,0.4)"

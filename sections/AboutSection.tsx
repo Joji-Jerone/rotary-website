@@ -20,12 +20,12 @@ export default function AboutSection() {
       aria-label="About Us"
     >
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-16 items-start">
           {/* ── Left Column: Image + What We Do ── */}
           <div className="flex flex-col gap-8">
             {/* Image */}
             <div className="relative">
-              <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+              <div className="relative h-[320px] lg:h-[320px] xl:h-[420px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                 <Image
                   src="/images/AboutRotary.jpeg"
                   alt="Our team working in the field"
@@ -138,9 +138,9 @@ export default function AboutSection() {
                 About Sirumugai Rotary
               </h3>
               <p className="text-gray-600 leading-relaxed text-sm">
-                Sirumugai Rotary Club was chartered on{" "}
+                Rotary Club of Sirumugai was chartered on{" "}
                 <strong className="text-ngo-black">27.09.2021</strong> as a team
-                of 25 members, and our current member count is{" "}
+                of 32 members, and our current member count is{" "}
                 <strong className="text-ngo-black">35</strong>. Over the past 5
                 years, we have followed Rotary&apos;s principles and engaged in
                 more than{" "}

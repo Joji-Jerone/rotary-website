@@ -72,7 +72,7 @@ export default function ImpactSection() {
         />
 
         {/* ── Stat Cards ── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4 xl:gap-5 mb-12 lg:mb-12 xl:mb-16">
           {STATS.map(({ Icon, target, suffix, label, description }) => (
             <div
               key={label}
@@ -81,7 +81,7 @@ export default function ImpactSection() {
               <div className="mb-4 p-3 rounded-full bg-brand/20 group-hover:bg-brand/40 transition-colors duration-300">
                 <Icon className="h-7 w-7 text-brand" />
               </div>
-              <span className="text-4xl md:text-5xl font-bold text-white mb-1 tabular-nums">
+              <span className="text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-1 tabular-nums">
                 <AnimatedCounter
                   target={target}
                   suffix={suffix ?? ""}

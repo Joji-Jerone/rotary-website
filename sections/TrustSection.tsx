@@ -161,7 +161,7 @@ export default function TrustSection() {
           <p className="text-gray-600 leading-relaxed text-sm">
             At Sirumugai Rotary Trust, we are dedicated to making a meaningful
             difference in the lives of individuals and communities. Founded in{" "}
-            <strong className="text-ngo-black">2022</strong>, our mission is to
+            <strong className="text-ngo-black">2021</strong>, our mission is to
             provide scholarships and financial aid to deserving poor students,
             promote healthcare access in rural areas, provide financial
             assistance to deserving patients who need medical treatments,

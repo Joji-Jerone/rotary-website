@@ -12,20 +12,37 @@ import CardWrapper from "@/components/CardWrapper";
 interface FormData {
   name: string;
   email: string;
+  mobile: string;
   subject: string;
   message: string;
 }
 
 const CONTACT_ITEMS = [
-  { Icon: MapPin, label: "Address", key: "address" as const, color: "bg-blue-50 text-blue-600" },
-  { Icon: Mail,   label: "Email",   key: "email"   as const, color: "bg-green-50 text-green-600" },
-  { Icon: Phone,  label: "Phone",   key: "phone"   as const, color: "bg-purple-50 text-purple-600" },
+  {
+    Icon: MapPin,
+    label: "Address",
+    key: "address" as const,
+    color: "bg-blue-50 text-blue-600",
+  },
+  {
+    Icon: Mail,
+    label: "Email",
+    key: "email" as const,
+    color: "bg-green-50 text-green-600",
+  },
+  {
+    Icon: Phone,
+    label: "Phone",
+    key: "phone" as const,
+    color: "bg-purple-50 text-purple-600",
+  },
 ] as const;
 
 export default function ContactSection() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
+    mobile: "",
     subject: "",
     message: "",
   });
@@ -33,7 +50,7 @@ export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -60,13 +77,14 @@ export default function ContactSection() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6 xl:gap-8 max-w-5xl mx-auto">
-
           {/* ── Contact Info Column ── */}
           <div className="space-y-4">
             {CONTACT_ITEMS.map(({ Icon, label, key, color }) => (
               <CardWrapper key={label} className="p-4" lift={false}>
                 <div className="flex gap-4 items-start">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${color}`}>
+                  <div
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${color}`}
+                  >
                     <Icon className="h-4 w-4" />
                   </div>
                   <div>
@@ -91,7 +109,9 @@ export default function ContactSection() {
                   <p className="text-sm text-ngo-black font-semibold mb-0.5">
                     Response within 24 hours
                   </p>
-                  <p className="text-xs text-gray-500">Mon – Fri, 9am – 6pm IST</p>
+                  <p className="text-xs text-gray-500">
+                    Mon – Fri, 9am – 6pm IST
+                  </p>
                 </div>
               </div>
             </CardWrapper>
@@ -105,16 +125,25 @@ export default function ContactSection() {
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="h-8 w-8 text-green-500" />
                   </div>
-                  <h3 className="text-xl font-bold text-ngo-black mb-2">Message Sent!</h3>
+                  <h3 className="text-xl font-bold text-ngo-black mb-2">
+                    Message Sent!
+                  </h3>
                   <p className="text-gray-500 max-w-sm text-sm">
-                    Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                    Thank you for reaching out. We&apos;ll get back to you
+                    within 24 hours.
                   </p>
                   <Button
                     variant="outline"
                     className="mt-6 border-brand text-brand hover:bg-brand hover:text-white transition-all duration-200"
                     onClick={() => {
                       setSubmitted(false);
-                      setFormData({ name: "", email: "", subject: "", message: "" });
+                      setFormData({
+                        name: "",
+                        email: "",
+                        mobile: "",
+                        subject: "",
+                        message: "",
+                      });
                     }}
                   >
                     Send Another Message
@@ -122,9 +151,12 @@ export default function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                     <div className="space-y-1.5">
-                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-semibold text-gray-700"
+                      >
                         Your Name <span className="text-red-500">*</span>
                       </label>
                       <Input
@@ -138,7 +170,10 @@ export default function ContactSection() {
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-semibold text-gray-700"
+                      >
                         Email Address <span className="text-red-500">*</span>
                       </label>
                       <Input
@@ -152,10 +187,30 @@ export default function ContactSection() {
                         className="border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl h-11"
                       />
                     </div>
+                    <div className="space-y-1.5">
+                      <label
+                        htmlFor="mobile"
+                        className="block text-sm font-semibold text-gray-700"
+                      >
+                        Mobile Number
+                      </label>
+                      <Input
+                        id="mobile"
+                        name="mobile"
+                        type="tel"
+                        placeholder="+91 98765 43210"
+                        value={formData.mobile}
+                        onChange={handleChange}
+                        className="border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl h-11"
+                      />
+                    </div>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label htmlFor="subject" className="block text-sm font-semibold text-gray-700">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-semibold text-gray-700"
+                    >
                       Subject
                     </label>
                     <Input
@@ -169,7 +224,10 @@ export default function ContactSection() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-semibold text-gray-700"
+                    >
                       Message <span className="text-red-500">*</span>
                     </label>
                     <Textarea

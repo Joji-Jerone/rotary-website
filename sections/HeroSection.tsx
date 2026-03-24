@@ -86,7 +86,7 @@ export default function HeroSection() {
                 Donate Now <ArrowRight className="h-5 w-5" />
               </LinkButton>
               <a
-                href="#projects"
+                href="#contact"
                 className="inline-flex items-center justify-center border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold px-8 py-4 text-base rounded-full transition-all duration-200 no-underline shadow-md hover:shadow-lg hover:scale-105"
               >
                 Get Involved

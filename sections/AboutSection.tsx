@@ -141,7 +141,7 @@ export default function AboutSection() {
                 Rotary Club of Sirumugai was chartered on{" "}
                 <strong className="text-ngo-black">27.09.2021</strong> as a team
                 of 32 members, and our current member count is{" "}
-                <strong className="text-ngo-black">35</strong>. Over the past 5
+                <strong className="text-ngo-black">35</strong>. Over the past 4+
                 years, we have followed Rotary&apos;s principles and engaged in
                 more than{" "}
                 <strong className="text-ngo-black">200 activities</strong> to

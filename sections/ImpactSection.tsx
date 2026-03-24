@@ -66,7 +66,7 @@ export default function ImpactSection() {
       <div className="container-custom relative z-10">
         <SectionHeading
           eyebrow="Our Impact"
-          title="Four Years of Service in Numbers"
+          title="4+ Years of Service in Numbers"
           subtitle="Every statistic represents a life changed, a community strengthened, and a future made brighter — right here in Sirumugai."
           light
         />

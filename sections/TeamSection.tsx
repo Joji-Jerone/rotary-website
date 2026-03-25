@@ -77,7 +77,7 @@ export default function TeamSection() {
           subtitle="Meet the dedicated leaders steering our club through the 2025–2026 Rotary year."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-7">
           {TEAM.map((member) => (
             <ExecutivePortraitCard
               key={member.email}

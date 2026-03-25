@@ -83,19 +83,19 @@ export default function ProjectsSection() {
     return () => { document.body.style.overflow = ""; };
   }, [activeId]);
 
-  /* — Expanded rect: centered on viewport — */
+  /* — Expanded rect: centered on viewport, always fits — */
   const getExpandedStyle = (): React.CSSProperties => {
     if (typeof window === "undefined") return {};
     const vw = window.innerWidth;
     const vh = window.innerHeight;
-    const w = Math.min(520, vw - 48);
-    const maxH = vh - 48; // leave 24px top + 24px bottom
-    const h = Math.min(w + 200, maxH); // constrain to viewport
+    const pad = vw < 640 ? 24 : 48; // tighter on mobile
+    const w = Math.min(520, vw - pad);
+    const maxH = vh - pad; // always fit in viewport
     return {
-      top: Math.max(24, (vh - h) / 2),
-      left: Math.max(24, (vw - w) / 2),
+      top: pad / 2,
+      left: Math.max(pad / 2, (vw - w) / 2),
       width: w,
-      maxHeight: maxH,
+      height: maxH,
     };
   };
 
@@ -116,7 +116,7 @@ export default function ProjectsSection() {
           />
 
           {/* ── Grid ── */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
             {PROJECTS.map((project) => (
               <div
                 key={project.id}
@@ -188,12 +188,12 @@ export default function ProjectsSection() {
         const expanded = getExpandedStyle();
         return (
           <div
-            className="fixed z-50 overflow-auto"
+            className="fixed z-50 overflow-hidden"
             style={{
               top: isExpanded ? expanded.top : originRect.top,
               left: isExpanded ? expanded.left : originRect.left,
               width: isExpanded ? expanded.width : originRect.width,
-              maxHeight: isExpanded ? expanded.maxHeight : undefined,
+              height: isExpanded ? expanded.height : originRect.height,
               borderRadius: "1.5rem",
               boxShadow: isExpanded
                 ? "0 25px 60px -12px rgba(0,0,0,0.4)"
@@ -202,12 +202,14 @@ export default function ProjectsSection() {
                 "top 0.4s cubic-bezier(0.32, 0.72, 0, 1)",
                 "left 0.4s cubic-bezier(0.32, 0.72, 0, 1)",
                 "width 0.4s cubic-bezier(0.32, 0.72, 0, 1)",
+                "height 0.4s cubic-bezier(0.32, 0.72, 0, 1)",
                 "box-shadow 0.4s ease",
               ].join(", "),
               pointerEvents: isExpanded ? "auto" : "none",
             }}
           >
-            <div className="bg-white rounded-3xl overflow-hidden relative">
+            {/* Flex column fills the fixed container — image stretches, text stays at bottom */}
+            <div className="bg-white rounded-3xl overflow-hidden relative flex flex-col h-full">
               {/* Close button */}
               <button
                 onClick={(e) => {
@@ -226,8 +228,8 @@ export default function ProjectsSection() {
                 <X className="w-4 h-4 text-gray-700" />
               </button>
 
-              {/* 1:1 image */}
-              <div className="relative aspect-square overflow-hidden bg-gray-100">
+              {/* Image — grows to fill available space, never forces overflow */}
+              <div className="relative flex-1 min-h-0 overflow-hidden bg-gray-100">
                 <Image
                   src={activeProject.image}
                   alt={activeProject.title}
@@ -258,31 +260,31 @@ export default function ProjectsSection() {
                 </div>
               </div>
 
-              {/* Text */}
+              {/* Text — fixed at bottom, never overflows */}
               <div
+                className="shrink-0"
                 style={{
-                  padding: isExpanded ? "1.5rem" : "1.25rem",
+                  padding: isExpanded ? "1rem 1.25rem" : "1.25rem",
                   transition: "padding 0.35s ease",
                 }}
               >
                 <h3
                   className="font-bold text-ngo-black leading-snug"
                   style={{
-                    fontSize: isExpanded ? "1.35rem" : "1rem",
-                    marginBottom: isExpanded ? "0.75rem" : "0.5rem",
-                    transition: "font-size 0.35s ease, margin-bottom 0.35s ease",
+                    fontSize: isExpanded ? "1.15rem" : "1rem",
+                    marginBottom: isExpanded ? "0.5rem" : "0.5rem",
+                    transition: "font-size 0.35s ease",
                   }}
                 >
                   {activeProject.title}
                 </h3>
                 <p
-                  className="text-gray-600 leading-relaxed"
+                  className="text-gray-600 leading-relaxed text-sm"
                   style={{
-                    fontSize: "0.875rem",
-                    display: isExpanded ? "block" : "-webkit-box",
-                    WebkitLineClamp: isExpanded ? undefined : 3,
+                    display: "-webkit-box",
+                    WebkitLineClamp: isExpanded ? 6 : 3,
                     WebkitBoxOrient: "vertical" as const,
-                    overflow: isExpanded ? "visible" : "hidden",
+                    overflow: "hidden",
                   }}
                 >
                   {activeProject.description}

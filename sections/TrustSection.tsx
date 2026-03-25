@@ -115,7 +115,7 @@ export default function TrustSection() {
       className="section-padding bg-white"
       aria-label="Sirumugai Rotary Trust"
     >
-      <div className="container-custom space-y-12">
+      <div className="container-custom space-y-8 sm:space-y-10 lg:space-y-12">
         {/* ── Section heading ── */}
         <SectionHeading
           eyebrow="About the Trust"
@@ -124,7 +124,7 @@ export default function TrustSection() {
         />
 
         {/* ── Banner image ── */}
-        <div className="relative h-52 md:h-64 xl:h-80 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+        <div className="relative h-40 sm:h-52 md:h-64 xl:h-80 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border border-gray-200">
           <Image
             src="/images/trustImage.png"
             alt="Sirumugai Rotary Trust community activities"
@@ -133,13 +133,13 @@ export default function TrustSection() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-900/80 to-transparent" />
-          <div className="absolute inset-0 flex items-center px-10">
+          <div className="absolute inset-0 flex items-center px-5 sm:px-10">
             <div className="max-w-sm">
-              <p className="text-white/80 text-sm font-semibold uppercase tracking-widest mb-2">
+              <p className="text-white/80 text-xs sm:text-sm font-semibold uppercase tracking-widest mb-1 sm:mb-2">
                 Founded 2021
               </p>
               <h3
-                className="text-white text-2xl md:text-3xl font-bold leading-snug"
+                className="text-white text-lg sm:text-2xl md:text-3xl font-bold leading-snug"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Every Rupee Counts,
@@ -222,7 +222,7 @@ export default function TrustSection() {
           <p className="text-xs font-semibold text-brand uppercase tracking-widest mb-5 text-center">
             Core Values
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4 xl:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4 xl:gap-5">
             {CORE_VALUES.map((val) => (
               <div
                 key={val.title}
@@ -247,7 +247,7 @@ export default function TrustSection() {
           <p className="text-xs font-semibold text-brand uppercase tracking-widest mb-5 text-center">
             Board of Trustees
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {BOARD.map((member) => (
               <ExecutivePortraitCard
                 key={member.name}
@@ -271,7 +271,7 @@ export default function TrustSection() {
             </div>
             Statutory Obligations &amp; Tax Compliance
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
             {[
               { label: "PAN", value: "ABHTS4005K" },
               { label: "80G Approval No.", value: "ABHTS4005K24CH02" },
@@ -315,12 +315,12 @@ export default function TrustSection() {
             your support will help us expand our impact and bring hope to more
             lives.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
             {INVOLVE.map((item) => (
               <a
                 key={item.label}
                 href={item.cta}
-                className="group p-6 rounded-2xl border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out bg-white text-center block"
+                className="group p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out bg-white text-center block"
               >
                 <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mx-auto mb-3 group-hover:bg-brand transition-colors duration-300">
                   <item.icon className="h-6 w-6 text-brand group-hover:text-white transition-colors duration-300" />
@@ -344,7 +344,7 @@ export default function TrustSection() {
             </div>
             Contact the Trust
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
             <div className="flex items-start gap-3">
               <MapPin className="h-5 w-5 text-brand shrink-0 mt-0.5" />
               <div>

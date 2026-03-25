@@ -17,6 +17,14 @@ interface FormData {
   message: string;
 }
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  mobile?: string;
+  subject?: string;
+  message?: string;
+}
+
 const CONTACT_ITEMS = [
   {
     Icon: MapPin,
@@ -38,6 +46,45 @@ const CONTACT_ITEMS = [
   },
 ] as const;
 
+function validate(data: FormData): FormErrors {
+  const errors: FormErrors = {};
+
+  // Name — required, min 2 chars, only letters & spaces
+  const trimmedName = data.name.trim();
+  if (!trimmedName) {
+    errors.name = "Name is required.";
+  } else if (trimmedName.length < 2) {
+    errors.name = "Name must be at least 2 characters.";
+  } else if (!/^[A-Za-z\s.'-]+$/.test(trimmedName)) {
+    errors.name = "Name can only contain letters, spaces, and hyphens.";
+  }
+
+  // Email — optional, but if filled must be valid
+  const trimmedEmail = data.email.trim();
+  if (trimmedEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+    errors.email = "Please enter a valid email address.";
+  }
+
+  // Mobile — optional, but if filled must be exactly 10 digits (+91 prefix is shown separately)
+  const trimmedMobile = data.mobile.trim();
+  if (trimmedMobile) {
+    const digitsOnly = trimmedMobile.replace(/[\s\-()]/g, "");
+    if (!/^\d{10}$/.test(digitsOnly)) {
+      errors.mobile = "Please enter a valid 10-digit mobile number.";
+    }
+  }
+
+  // Message — required, min 10 chars
+  const trimmedMessage = data.message.trim();
+  if (!trimmedMessage) {
+    errors.message = "Message is required.";
+  } else if (trimmedMessage.length < 10) {
+    errors.message = "Message must be at least 10 characters.";
+  }
+
+  return errors;
+}
+
 export default function ContactSection() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -46,17 +93,51 @@ export default function ContactSection() {
     subject: "",
     message: "",
   });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Set<string>>(new Set());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    const next = { ...formData, [name]: value };
+    setFormData(next);
+
+    // Live-clear error once the field is valid (only if already touched)
+    if (touched.has(name)) {
+      const fieldErrors = validate(next);
+      setErrors((prev) => ({
+        ...prev,
+        [name]: fieldErrors[name as keyof FormErrors],
+      }));
+    }
+  };
+
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name } = e.target;
+    setTouched((prev) => new Set(prev).add(name));
+    const fieldErrors = validate(formData);
+    setErrors((prev) => ({
+      ...prev,
+      [name]: fieldErrors[name as keyof FormErrors],
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Mark all fields as touched
+    setTouched(new Set(["name", "email", "mobile", "subject", "message"]));
+
+    const validationErrors = validate(formData);
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) return;
+
     setIsSubmitting(true);
     await new Promise((resolve) => setTimeout(resolve, 1400));
     setIsSubmitting(false);
@@ -76,7 +157,7 @@ export default function ContactSection() {
           subtitle="Have questions, want to volunteer, or explore a partnership? We'd love to hear from you."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6 xl:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-6 xl:gap-8 max-w-5xl mx-auto">
           {/* ── Contact Info Column ── */}
           <div className="space-y-4">
             {CONTACT_ITEMS.map(({ Icon, label, key, color }) => (
@@ -144,6 +225,8 @@ export default function ContactSection() {
                         subject: "",
                         message: "",
                       });
+                      setErrors({});
+                      setTouched(new Set());
                     }}
                   >
                     Send Another Message
@@ -151,7 +234,7 @@ export default function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                     <div className="space-y-1.5">
                       <label
                         htmlFor="name"
@@ -162,47 +245,66 @@ export default function ContactSection() {
                       <Input
                         id="name"
                         name="name"
-                        required
                         placeholder="Jane Doe"
                         value={formData.name}
                         onChange={handleChange}
-                        className="border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl h-11"
+                        onBlur={handleBlur}
+                        className={`border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl h-11 ${errors.name ? "border-red-400 focus:border-red-400 focus-visible:ring-red-300" : ""}`}
                       />
+                      {errors.name && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.name}
+                        </p>
+                      )}
                     </div>
                     <div className="space-y-1.5">
                       <label
                         htmlFor="email"
                         className="block text-sm font-semibold text-gray-700"
                       >
-                        Email Address <span className="text-red-500">*</span>
+                        Email Address
                       </label>
                       <Input
                         id="email"
                         name="email"
                         type="email"
-                        required
                         placeholder="jane@example.com"
                         value={formData.email}
                         onChange={handleChange}
-                        className="border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl h-11"
+                        onBlur={handleBlur}
+                        className={`border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl h-11 ${errors.email ? "border-red-400 focus:border-red-400 focus-visible:ring-red-300" : ""}`}
                       />
+                      {errors.email && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="space-y-1.5 sm:col-span-2 lg:col-span-1">
                       <label
                         htmlFor="mobile"
                         className="block text-sm font-semibold text-gray-700"
                       >
                         Mobile Number
                       </label>
-                      <Input
-                        id="mobile"
-                        name="mobile"
-                        type="tel"
-                        placeholder="+91 98765 43210"
-                        value={formData.mobile}
-                        onChange={handleChange}
-                        className="border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl h-11"
-                      />
+                      <div className={`flex items-center rounded-xl border h-11 overflow-hidden transition-all duration-200 focus-within:ring-2 focus-within:ring-brand ${errors.mobile ? "border-red-400 focus-within:ring-red-300" : "border-gray-200 focus-within:border-brand"}`}>
+                        <span className="pl-3 pr-1.5 text-sm text-gray-500 font-medium select-none shrink-0">+91</span>
+                        <input
+                          id="mobile"
+                          name="mobile"
+                          type="tel"
+                          placeholder="98765 43210"
+                          value={formData.mobile}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          className="flex-1 h-full bg-transparent text-sm outline-none border-none focus:ring-0 placeholder:text-gray-400 pr-3"
+                        />
+                      </div>
+                      {errors.mobile && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.mobile}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -219,6 +321,7 @@ export default function ContactSection() {
                       placeholder="How can we help you?"
                       value={formData.subject}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       className="border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl h-11"
                     />
                   </div>
@@ -233,13 +336,18 @@ export default function ContactSection() {
                     <Textarea
                       id="message"
                       name="message"
-                      required
                       rows={5}
                       placeholder="Tell us about your interest in our work, or how you'd like to get involved..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl resize-none"
+                      onBlur={handleBlur}
+                      className={`border-gray-200 focus:border-brand focus-visible:ring-brand focus-visible:ring-2 transition-all duration-200 rounded-xl resize-none ${errors.message ? "border-red-400 focus:border-red-400 focus-visible:ring-red-300" : ""}`}
                     />
+                    {errors.message && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.message}
+                      </p>
+                    )}
                   </div>
 
                   <Button

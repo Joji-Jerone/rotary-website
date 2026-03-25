@@ -20,12 +20,12 @@ export default function AboutSection() {
       aria-label="About Us"
     >
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-8 xl:gap-16 items-start">
           {/* ── Left Column: Image + What We Do ── */}
           <div className="flex flex-col gap-8">
             {/* Image */}
             <div className="relative">
-              <div className="relative h-[320px] lg:h-[320px] xl:h-[420px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+              <div className="relative h-[220px] sm:h-[280px] md:h-[320px] lg:h-[320px] xl:h-[420px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                 <Image
                   src="/images/AboutRotary.jpeg"
                   alt="Our team working in the field"
@@ -37,15 +37,15 @@ export default function AboutSection() {
               </div>
 
               {/* Floating years badge */}
-              <div className="absolute -bottom-5 -right-4 bg-brand text-white rounded-2xl px-6 py-4 shadow-xl shadow-brand/30">
-                <p className="text-4xl font-bold leading-none">4+</p>
-                <p className="text-sm opacity-90 mt-1">Years of Service</p>
+              <div className="absolute -bottom-4 right-0 sm:-bottom-5 sm:-right-4 bg-brand text-white rounded-xl sm:rounded-2xl px-4 py-2.5 sm:px-6 sm:py-4 shadow-xl shadow-brand/30">
+                <p className="text-2xl sm:text-4xl font-bold leading-none">4+</p>
+                <p className="text-xs sm:text-sm opacity-90 mt-0.5 sm:mt-1">Years of Service</p>
               </div>
 
               {/* Floating award badge */}
-              <div className="absolute top-4 -left-4 bg-white rounded-2xl px-4 py-3 shadow-xl border border-gray-200 flex items-center gap-2">
-                <Award className="h-5 w-5 text-brand" />
-                <span className="text-sm font-semibold text-ngo-black">
+              <div className="absolute top-3 left-0 sm:top-4 sm:-left-4 bg-white rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl border border-gray-200 flex items-center gap-1.5 sm:gap-2">
+                <Award className="h-4 w-4 sm:h-5 sm:w-5 text-brand" />
+                <span className="text-xs sm:text-sm font-semibold text-ngo-black">
                   Rotary Dist 3203
                 </span>
               </div>
@@ -56,7 +56,7 @@ export default function AboutSection() {
               <p className="text-xs font-semibold text-brand uppercase tracking-widest mb-4">
                 What We Do
               </p>
-              <div className="grid grid-cols-2 gap-2.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                 {VALUES.map((v) => (
                   <div
                     key={v}

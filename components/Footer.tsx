@@ -224,7 +224,7 @@ export default function Footer() {
     <>
       <footer className="bg-ngo-black text-white">
         <div className="container-custom mx-auto py-14">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 xl:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 xl:gap-10">
             {/* ── Brand Column ── */}
             <div className="lg:col-span-2">
               <div className="mb-4">

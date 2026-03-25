@@ -55,10 +55,10 @@ export default function DonateSection() {
       <div className="container-custom text-center relative z-10">
 
         {/* ── Pulse icon ── */}
-        <div className="relative w-20 h-20 mx-auto mb-6">
+        <div className="relative w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6">
           <span className="absolute inset-0 rounded-full bg-white/20 animate-ping opacity-60" />
-          <div className="relative w-20 h-20 rounded-full bg-white/15 border border-white/20 flex items-center justify-center shadow-lg">
-            <Heart className="h-10 w-10 text-white" fill="white" />
+          <div className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-white/15 border border-white/20 flex items-center justify-center shadow-lg">
+            <Heart className="h-7 w-7 sm:h-10 sm:w-10 text-white" fill="white" />
           </div>
         </div>
 
@@ -69,7 +69,7 @@ export default function DonateSection() {
 
         {/* ── Main heading ── */}
         <h2
-          className="text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-5 leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-5 leading-tight"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Your Contribution Can
@@ -77,7 +77,7 @@ export default function DonateSection() {
         </h2>
 
         {/* ── Description ── */}
-        <p className="text-white/80 max-w-2xl mx-auto mb-5 text-lg leading-relaxed">
+        <p className="text-white/80 max-w-2xl mx-auto mb-4 sm:mb-5 text-sm sm:text-base md:text-lg leading-relaxed">
           Every contribution you make directly supports initiatives that provide
           food, education, and hope to those in need. Join thousands of supporters
           across <strong className="text-white">India</strong> who are making a
@@ -85,7 +85,7 @@ export default function DonateSection() {
         </p>
 
         {/* ── Catchphrase ── */}
-        <p className="text-white/60 italic text-base md:text-lg max-w-xl mx-auto mb-10">
+        <p className="text-white/60 italic text-sm sm:text-base md:text-lg max-w-xl mx-auto mb-8 sm:mb-10">
           &ldquo;Your Support Can Rewrite Someone&rsquo;s Future.&rdquo;
         </p>
 
@@ -93,7 +93,7 @@ export default function DonateSection() {
         <Button
           onClick={() => setOpen(true)}
           size="lg"
-          className="bg-white text-brand hover:bg-white/90 font-bold px-10 py-6 text-lg shadow-2xl rounded-full transition-all duration-200 hover:scale-105 inline-flex items-center gap-2"
+          className="bg-white text-brand hover:bg-white/90 font-bold px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-lg shadow-2xl rounded-full transition-all duration-200 hover:scale-105 inline-flex items-center gap-2"
         >
           Donate Now <ArrowRight className="h-5 w-5" />
         </Button>

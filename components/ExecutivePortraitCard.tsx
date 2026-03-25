@@ -23,7 +23,7 @@ export default function ExecutivePortraitCard({
   const hasContact = Boolean(phone || email);
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out bg-white">
+    <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out bg-white">
       {/* Portrait image */}
       <div className="relative aspect-[3/4] overflow-hidden">
         <Image

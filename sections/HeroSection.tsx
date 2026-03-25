@@ -23,11 +23,11 @@ export default function HeroSection() {
       aria-label="Hero"
     >
       {/* Decorative shapes */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-50 rounded-full -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-50 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-brand-50 rounded-full -translate-y-1/3 translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-40 h-40 sm:w-80 sm:h-80 bg-brand-50 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-      <div className="container-custom relative z-10 pt-24 pb-12 lg:pt-24 lg:pb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-16 items-center">
+      <div className="container-custom relative z-10 pt-20 pb-10 sm:pt-24 sm:pb-12 lg:pt-24 lg:pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-8 xl:gap-16 items-center">
           {/* ── Left: Text Content ── */}
           <div>
             {/* Rotary badge */}
@@ -44,7 +44,7 @@ export default function HeroSection() {
 
             {/* Heading */}
             <h1
-              className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-5 text-ngo-black"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-6xl font-bold leading-tight mb-4 sm:mb-5 text-ngo-black"
               style={{
                 fontFamily: "var(--font-heading)",
                 animation: "var(--animate-fade-in-up)",
@@ -58,7 +58,7 @@ export default function HeroSection() {
 
             {/* Subtext */}
             <p
-              className="text-base lg:text-base xl:text-lg text-gray-500 max-w-lg mb-6 lg:mb-6 xl:mb-8 leading-relaxed"
+              className="text-sm sm:text-base lg:text-base xl:text-lg text-gray-500 max-w-lg mb-5 sm:mb-6 lg:mb-6 xl:mb-8 leading-relaxed"
               style={{
                 animation: "var(--animate-fade-in-up)",
                 animationDelay: "300ms",
@@ -72,7 +72,7 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div
-              className="flex flex-col sm:flex-row gap-4 mb-8 lg:mb-8 xl:mb-12"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 lg:mb-8 xl:mb-12"
               style={{
                 animation: "var(--animate-fade-in-up)",
                 animationDelay: "450ms",
@@ -81,13 +81,13 @@ export default function HeroSection() {
               <LinkButton
                 href="#donate"
                 size="lg"
-                className="bg-brand hover:bg-brand-600 text-white font-semibold px-8 py-6 text-base shadow-lg shadow-brand/30 hover:shadow-xl hover:shadow-brand/40 rounded-full inline-flex items-center gap-2 hover:scale-105 transition-all duration-200"
+                className="bg-brand hover:bg-brand-600 text-white font-semibold px-6 py-4 sm:px-8 sm:py-6 text-sm sm:text-base shadow-lg shadow-brand/30 hover:shadow-xl hover:shadow-brand/40 rounded-full inline-flex items-center gap-2 hover:scale-105 transition-all duration-200"
               >
                 Donate Now <ArrowRight className="h-5 w-5" />
               </LinkButton>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold px-8 py-4 text-base rounded-full transition-all duration-200 no-underline shadow-md hover:shadow-lg hover:scale-105"
+                className="inline-flex items-center justify-center border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base rounded-full transition-all duration-200 no-underline shadow-md hover:shadow-lg hover:scale-105"
               >
                 Get Involved
               </a>
@@ -95,7 +95,7 @@ export default function HeroSection() {
 
             {/* Stats strip */}
             <div
-              className="grid grid-cols-3 gap-4"
+              className="grid grid-cols-3 gap-2 sm:gap-4"
               style={{
                 animation: "var(--animate-fade-in)",
                 animationDelay: "600ms",
@@ -104,13 +104,13 @@ export default function HeroSection() {
               {STATS.map(({ value, label, Icon }) => (
                 <div
                   key={label}
-                  className="flex flex-col items-center text-center p-4 rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+                  className="flex flex-col items-center text-center p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
                 >
                   <div className="w-9 h-9 rounded-xl bg-brand-50 flex items-center justify-center mb-2">
                     <Icon className="h-4 w-4 text-brand" />
                   </div>
-                  <p className="text-xl font-bold text-ngo-black">{value}</p>
-                  <p className="text-xs text-gray-500 leading-tight mt-0.5">
+                  <p className="text-base sm:text-xl font-bold text-ngo-black">{value}</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 leading-tight mt-0.5">
                     {label}
                   </p>
                 </div>
@@ -138,24 +138,24 @@ export default function HeroSection() {
             </div>
 
             {/* Floating info card */}
-            <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-4 shadow-xl border border-gray-200 flex items-center gap-3">
+            <div className="absolute -bottom-4 left-0 sm:-bottom-5 sm:-left-5 bg-white rounded-xl sm:rounded-2xl px-3 py-2.5 sm:px-5 sm:py-4 shadow-xl border border-gray-200 flex items-center gap-2 sm:gap-3 max-w-[70%] sm:max-w-none">
               <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center">
                 <HeartHandshake className="h-5 w-5 text-brand" />
               </div>
               <div>
-                <p className="text-sm font-bold text-ngo-black">
+                <p className="text-xs sm:text-sm font-bold text-ngo-black">
                   Rotary Club Of Sirumugai
                 </p>
-                <p className="text-xs text-gray-400">
+                <p className="text-[10px] sm:text-xs text-gray-400">
                   Est. 2021 &bull; Service Above Self
                 </p>
               </div>
             </div>
 
             {/* Floating years badge */}
-            <div className="absolute -top-4 -right-4 bg-brand text-white rounded-2xl px-4 py-3 shadow-lg shadow-brand/30 text-center">
-              <p className="text-3xl font-bold leading-none">4+</p>
-              <p className="text-xs opacity-90 mt-1">
+            <div className="absolute -top-3 right-0 sm:-top-4 sm:-right-4 bg-brand text-white rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3 shadow-lg shadow-brand/30 text-center">
+              <p className="text-2xl sm:text-3xl font-bold leading-none">4+</p>
+              <p className="text-[10px] sm:text-xs opacity-90 mt-0.5 sm:mt-1">
                 Years of
                 <br />
                 Service

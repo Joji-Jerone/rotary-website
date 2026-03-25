@@ -72,16 +72,16 @@ export default function ImpactSection() {
         />
 
         {/* ── Stat Cards ── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4 xl:gap-5 mb-12 lg:mb-12 xl:mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4 xl:gap-5 mb-10 sm:mb-12 lg:mb-12 xl:mb-16">
           {STATS.map(({ Icon, target, suffix, label, description }) => (
             <div
               key={label}
-              className="group flex flex-col items-center text-center p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand/50 hover:-translate-y-2 transition-all duration-300 ease-in-out"
+              className="group flex flex-col items-center text-center p-3 sm:p-6 rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand/50 hover:-translate-y-2 transition-all duration-300 ease-in-out"
             >
-              <div className="mb-4 p-3 rounded-full bg-brand/20 group-hover:bg-brand/40 transition-colors duration-300">
-                <Icon className="h-7 w-7 text-brand" />
+              <div className="mb-2 sm:mb-4 p-2 sm:p-3 rounded-full bg-brand/20 group-hover:bg-brand/40 transition-colors duration-300">
+                <Icon className="h-5 w-5 sm:h-7 sm:w-7 text-brand" />
               </div>
-              <span className="text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-1 tabular-nums">
+              <span className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-1 tabular-nums">
                 <AnimatedCounter
                   target={target}
                   suffix={suffix ?? ""}
@@ -104,7 +104,7 @@ export default function ImpactSection() {
           {TESTIMONIALS.map((t) => (
             <div
               key={t.author}
-              className="group p-7 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand/40 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+              className="group p-4 sm:p-7 rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand/40 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
             >
               {/* Large decorative quote */}
               <Quote className="absolute top-4 right-4 h-10 w-10 text-brand/10" />

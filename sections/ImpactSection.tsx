@@ -46,8 +46,8 @@ const TESTIMONIALS = [
   {
     quote:
       "The wheelchair provided by Rotary Sirumugai has given me independence I never thought possible. Their kindness has truly changed my life.",
-    author: "Beneficiary",
-    location: "Sirumugai, Coimbatore District",
+    author: "Vellingiri",
+    location: "Timmarayamapalayam, Coimbatore District",
     avatar: "B",
   },
 ];
